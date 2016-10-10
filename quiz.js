@@ -6,6 +6,8 @@ var allQuestions = [];
 var rightAnswers = ['no', 'no', 'yes', 'no', 'yes', 'yes', 'yes', 'no', 'no', 'yes'];
 var userAnswers = [];
 var index = 0;
+var counter = 0;
+var score = 0;
 
 function Question(question, answer) {
   this.question = question;
@@ -15,6 +17,7 @@ function Question(question, answer) {
 
 makingQuestions();
 function makingQuestions() {
+  new Question('Can you recycle used pizza boxes?', 'No, grease in the pizza box can contaminate the recycling process.');
   new Question('Can you recycle hardback books?', 'No, the glue in the books binding can have a negative impact on the recycling process.');
   new Question('Can you recycle spiral bound notebooks?', 'Yes, but remove and dispose of the spiral binding in the garbage first.');
   new Question('Do I need to know what the numbers on the plastic bottle recyclable mean?', 'No, Seattle does not recycle by number or symbol.');
@@ -31,23 +34,46 @@ function createNewQuestion() {
   liEl.textContent = allQuestions[index].question;
   quiz.appendChild(liEl);
   index ++;
-}
+};
+
 //event listeners
 function clicksYes(event) {
+  counter += 1;
   event.preventDefault();
   userAnswers.push('yes');
   console.log('Clicked yes');
   quiz.innerHTML = '';
-  createNewQuestion();
+  if (counter > 9) {
+    yes.innerHTML = '';
+    no.innerHTML = '';
+    comparesAnswers();
+  } else {
+    createNewQuestion();
+  }
 };
 function clicksNo(event) {
+  counter += 1;
   event.preventDefault();
   userAnswers.push('no');
   console.log('Clicked no');
   quiz.innerHTML = '';
-  createNewQuestion();
-}
+  if (counter > 9) {
+    yes.innerHTML = '';
+    no.innerHTML = '';
+    comparesAnswers();
+  } else {
+    createNewQuestion();
+  }
+};
 
+function comparesAnswers() {
+  for (var i = 0; i < rightAnswers.length; i++) {
+    if (rightAnswers[i] === userAnswers[i]) {
+      score++;
+      console.log(score);
+    }
+  }
+};
 
 //event listener
 yes.addEventListener('submit', clicksYes);
