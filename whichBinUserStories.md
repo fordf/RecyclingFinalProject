@@ -24,4 +24,4 @@ As a developer:
 
 - I want the information page to provide plenty of information but display it in a non-overwhelming way
 
-- 
+-  
