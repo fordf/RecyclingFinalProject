@@ -6,3 +6,31 @@
 #mainimages img {
   margin-top: 2em;
 }
+
+nav {
+
+}
+
+#navimg {
+  margin: 0;
+}
+
+form {
+  margin: 10px auto;
+  text-align: center;
+}
+
+#main {
+  margin: 10px auto;
+  text-align: center;
+  max-width: 50%;
+}
+
+#inputbox {
+  margin: 10px auto;
+}
+
+button {
+  margin 10px auto;
+  display: inline-block;
+}
