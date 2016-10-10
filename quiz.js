@@ -1,10 +1,11 @@
 'use strict';
-
+var quiz = document.getElementById('quiz');
 var yes = document.getElementById('yes');
-var no = document.getElementById('no');
+var no = document.getElementById('no-form');
 var allQuestions = [];
 var rightAnswers = ['no', 'no', 'yes', 'no', 'yes', 'yes', 'yes', 'no', 'no', 'yes'];
 var userAnswers = [];
+var index = 0;
 
 function Question(question, answer) {
   this.question = question;
@@ -24,19 +25,32 @@ function makingQuestions() {
   new Question('Can I recycle my used clothes, shoes, or household fabrics?', 'No, all items would need to go into the garbage or be donated to a secondary store.');
   new Question('Can I recycle gift wrap?', 'Yes, provided it is paper gift wrap. Plastic, foil, or tissue paper needs to go into the garbage.');
 };
-
+function createNewQuestion() {
+  console.log(allQuestions[index].question);
+  var liEl = document.createElement('li');
+  liEl.textContent = allQuestions[index].question;
+  quiz.appendChild(liEl);
+  index ++;
+}
 //event listeners
 function clicksYes(event) {
   event.preventDefault();
   userAnswers.push('yes');
   console.log('Clicked yes');
+  quiz.innerHTML = '';
+  createNewQuestion();
 };
 function clicksNo(event) {
   event.preventDefault();
   userAnswers.push('no');
   console.log('Clicked no');
+  quiz.innerHTML = '';
+  createNewQuestion();
 }
+
 
 //event listener
 yes.addEventListener('submit', clicksYes);
 no.addEventListener('submit', clicksNo);
+
+createNewQuestion();
