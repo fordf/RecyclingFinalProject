@@ -6,3 +6,21 @@
 #mainimages img {
   margin-top: 2em;
 }
+
+nav {
+
+}
+
+#navimg {
+  margin: 0;
+}
+
+form {
+  margin: 10px auto;
+  text-align: center;
+}
+
+#mainDiv {
+  margin: 10px auto;
+  text-align: center;
+}
