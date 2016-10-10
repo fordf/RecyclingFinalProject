@@ -1,0 +1,8 @@
+#mainimages {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+#mainimages img {
+  margin-top: 2em;
+}
