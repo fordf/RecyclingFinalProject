@@ -11,7 +11,7 @@ var dataList = {
   // Aluminum
   // Aluminum_Foil_Trays
   // Ammunition_Guns_Fireworks
-  // Anti_Freeze
+  antifreeze: 'Take used antifreeze to the HHW locations for recycling or ask your local auto shop to recycle it for you. Do not pour out.',
   // Appliances_Large
   // Asbestos
   // Aseptic/Tetra Pak
@@ -34,19 +34,22 @@ var dataList = {
       produce: 'garbage'
     }
   },
-  // bags_paper: {
-  //   clean: 'recycle',
-  //   dirty: 'compost'
-  // },
-  //
-  // Bags_Plastic_Bread: 'garbage',
-  // Bags_Plastic_Grocery_Shopping: 'recycle in a bundle',
-  // Bags_Plastic_Produce: 'garbage',
-  // Bags_Plastic_Ziploc: 'garbage',
+
   // Barrels & Drums
 
-  Batteries_Alkaline: 'garbage or drop off',
-  Batteries_Rechargeable: 'drop off',
+  battery: {
+    alkaline: 'garbage or drop off recycling',
+    rechargeable: 'drop off recycling'
+  },
+
+  light: {
+    incandescent: 'garbage',
+    fluorescent: 'drop off only',
+    led: 'garbage',
+    christmas: 'during the holidays, drop off, otherwise, garbage'
+  },
+
+
   // Bed Frames
   // Bedding
   // Berry Trays
@@ -190,27 +193,6 @@ var dataList = {
   // Mugs, Plates, Bowls
 }
 
-function handleInput(itemString) {
-  var words = itemString.split(' ');
-  console.log(words);
-  // for (var j = 0; j < words.length; j++) {
-  //   for (var i in dataList[item]) {
-  //     console.log(i);
-  //   }
-  // }
-}
-
-function isIt(property) {
-  var ans = prompt('Is it ' + property + '?').toLowerCase();
-  if (ans === 'yes' || ans === 'y') {
-    return true;
-  } else if (ans === 'no' || ans === 'n') {
-    return false;
-  } else {
-    alert('Valid answers: yes, y, no, n');
-  }
-}
-
 var words;
 var obj;
 
@@ -218,20 +200,20 @@ function narrowDown(object) {
   obj = object;
   var found = false;
   var i = 0;
-  while (i < words.length) {
-    // console.log('i = ' + i);
-    // console.log(obj.hasOwnProperty(words[i]));
-    if (obj.hasOwnProperty(words[i])) {
-      if (typeof(obj[words[i]]) === 'string') {
+  while (i < words.length && !found) {
+    if (obj.hasOwnProperty(removeDash(words[i]))) {
+      if (typeof(obj[removeDash(words[i])]) === 'string') {
         found = true;
-        console.log('found it: ' + obj[words[i]]);
-        return obj[words[i]];
-      } else if (typeof(obj[words[i]]) === 'object') {
-        console.log('found object: ' + obj[words[i]]);
-        obj = obj[words[i]];
+        console.log('found it: ' + obj[removeDash(words[i])]);
+        mainDiv.innerHTML = '';
+        mainDiv.textContent = obj[removeDash(words[i])];
+      } else if (typeof(obj[removeDash(words[i])]) === 'object') {
+        console.log('found object: ' + obj[removeDash(words[i])]);
+        obj = obj[removeDash(words[i])];
         i = 0;
       }
     } else {
+      console.log('not found');
       i++;
     }
   }
@@ -239,13 +221,13 @@ function narrowDown(object) {
     renderButtons(obj);
   } else if (found) {
     mainDiv.innerHTML = '';
-    mainDiv.textContent = obj[words[i]];
+    mainDiv.textContent = obj[removeDash(words[i])];
   }
 }
-function handleSubmit(e) {
-  e.preventDefault();
+function handleSubmit(event) {
+  event.preventDefault();
   // console.log(e.target.item.value);
-  var itemString = e.target.item.value.toLowerCase();
+  var itemString = event.target.item.value.toLowerCase();
   words = itemString.split(' ');
   // console.log(words);
   narrowDown(dataList);
@@ -257,11 +239,13 @@ function handleClick(event) {
   // console.log(event.target);
   console.log(event.target.textContent);
   var which = obj[event.target.textContent];
+  console.log(which);
   if (typeof(which) === 'string'){
     mainDiv.innerHTML = '';
     mainDiv.textContent = which;
   } else {
-    renderButtons(obj[event.target.textContent]);
+    obj = which;
+    renderButtons(obj);
   }
 
   }
@@ -274,6 +258,16 @@ function renderButtons(object) {
     buttonEl.textContent = i;
     mainDiv.appendChild(buttonEl);
   }
+}
+
+function removeDash(str) {
+  var returnStr = '';
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] !== '-') {
+      returnStr = returnStr + str[i];
+    }
+  }
+  return returnStr;
 }
 
 form.addEventListener('submit', handleSubmit);
