@@ -12,4 +12,16 @@ As a user of the app:
 
 As a developer:
 
-- handle non-standard
+- I want to be able to handle input that doesn't precisely match our rule data.
+
+- I want to store the Seattle waste mgmt rules in some data structures that we can search through.
+
+- I want to have a nav bar to access the info page and about us page.
+
+- I want the information page to have an optional quiz to test users' knowledge.
+
+- I want to give the website a catchy informative name.
+
+- I want the information page to provide plenty of information but display it in a non-overwhelming way
+
+- 
