@@ -3,23 +3,66 @@
 var form = document.getElementById('inputbox');
 var mainDiv = document.getElementById('main');
 
+var boxes = {
+  butter: 'Recycle.',
+  cereal: 'Recycle. Liners go in garbage.',
+  cracker:'Recycle. Liners go in garbage.',
+  liner: 'Garbage',
+  'ice cream': 'Recycle.',
+  detergent: 'Recycle.',
+  soup: 'Recycle.',
+  milk: 'Recycle.',
+  juice: 'Recycle',
+  egg: {
+    clean: 'Recycle or compost.',
+    soiled: 'Compost.'
+  },
+  pizza: 'Compost',
+  tissue: 'Recycle. Try to remove plastic liner, but not necessary.'
+};
+
+var cardboard = {
+  greasy: 'Compost (Food & Yard Waste cart), can\'t be recycled.',
+  waxed: 'Compost (Food & Yard Waste cart), can\'t be recycled.',
+  corrugated: 'Recycle.',
+  wet: 'Compost (Food & Yard Waste cart).',
+  foamcore: 'Garbage'
+};
+
+var lid = {
+  'Diameter larger than 3"': 'Recycle.',
+  'Diameter smaller than 3"': 'Garbage.'
+};
+
 var dataList = {
-  // Acetylene_Oxygen_Tanks:
-  // Acoustic_Ceiling_Tile
-  // Aerosol_Spray_Cans
-  // Air_Conditioners_or_Heat_Pumps
-  // Aluminum
-  // Aluminum_Foil_Trays
-  // Ammunition_Guns_Fireworks
+  paper: {
+    cup: {
+      'plastic-coated': 'Recycle. Garbage if dirty. Unless cup says it\'s compostable.',
+      uncoated: 'Compost.'
+    },
+    plate: {
+      'plastic-coated': 'Recycle if clean. Garbage if dirty. Unless cup says it\'s compostable.',
+      uncoated: 'Compost.'
+    },
+    bag: {
+      clean: 'recycle',
+      dirty: 'compost'
+    },
+    towel: {
+      unused: 'Recycle',
+      'food-soiled': 'Compost.',
+      'chemical/body-fluid soiled': 'Garbage. Bagged preferably.',
+    },
+    napkin: {
+      unused: 'Recycle',
+      'food-soiled': 'Compost.',
+      'chemical/body-fluid soiled': 'Garbage. Bagged preferably.',
+    }
+  },
+  cardboard: cardboard,
+  box: boxes,
+  carton: boxes,
   antifreeze: 'Take used antifreeze to the HHW locations for recycling or ask your local auto shop to recycle it for you. Do not pour out.',
-  // Appliances_Large
-  // Asbestos
-  // Aseptic/Tetra Pak
-  // Ashes - Fireplace & Briquettes
-  // Asphalt Roofing
-  // Aspirin Containers
-  // Audio Equipment
-  // Auto_Parts_Starters_Carburetors
   bag: {
     paper: {
       clean: 'recycle',
@@ -49,149 +92,35 @@ var dataList = {
     christmas: 'during the holidays, drop off, otherwise, garbage'
   },
 
+  cardboard: cardboard,
+  lid: lid,
 
-  // Bed Frames
-  // Bedding
-  // Berry Trays
-  // Beverage Cans
-  // Bicycles & Bike Parts
-  // Biodegradable Foam Peanuts
-  // Bleach
-  // Blister Package
-  // Books, Hardback
-  // Books, Paperback
-  // Bottle Caps & Jar Lids
-  // Brake, Transmission Fluid
-  // Branches
-  // Brick
-  // Bubble Wrap
-  // Buckets
-  // Butter Boxes
-  // Camera & Watch Batteries
-  // Can Lids
-  // Cans, Aerosol Spray
-  // Car Glass
-  // Cars
-  // Cardboard, Boxes
-  // Cardboard, Corrugated
-  // Cardboard, Soiled or Greasy
-  // Cardboard, Waxed
-  // Carpet & Padding
-  // Cast Iron
-  // CD_Cases
-  // CDs_DVDs_Floppies
-  // Cell Phones
-  // Cell Phone Batteries
-  // Cereal & Cracker Boxes
-  // Child Car Seats
-  // Chip Bags
-  // Christmas Lights
-  // Christmas Trees
-  // Clam Shell Containers
-  // Clean Soil
-  // Cleaning Supplies
-  // Clock Radios
-  // Clothes
-  // Coffee Filters
-  // Compostable Food Ware
-  // Computers/Laptops
-  // Computer Batteries
-  // Computer Monitors
-  // Concrete & Asphalt
-  // Construction Waste, Mixed
-  // Contaminated Soil
-  // Cooking Oil
-  // Copiers/Fax Machines
-  // Copper, Bronze, Brass
-  // Corks
-  // Cups & Utensils, Plastic
-  // Dirt & Soil
-  // Disposable Diapers
-  // Drinking Glasses
-  // Drums
-  // Drywall
-  // Dry Cleaner Bags
-  // Ducts
-  // Edible Food to Donate
-  // Egg Cartons, Foam
-  // Egg Cartons, Paper
-  // Engines or Motors & Car Parts
-  // Envelopes_with
-  // E-waste
-  // Eyeglass Frames
-  // Eyeglasses
-  // Fabric or Textiles
-  // Facial Tissue (Kleenex)
-  // Fats, Oils & Grease
-  // Fax Machines
-  // Fiberglass
-  // Fire Extinguishers
-  // Flares
-  // Fluorescent Lights
-  // Flushable Wipes
-  // Foam Blocks or Packing Sheets
-  // Foamcore
-  // Foil Pie Pans
-  // Food Box Liners
-  // Food/Meat Trays
-  // Food Scraps -- All
-  // Food Scraps -- Home Composting
-  // Frozen Food Boxes
-  // Furnaces
-  // Gas Canisters, Small
-  // Gas Cans
-  // Gasoline
-  // Gift Wrap
-  // Glass Bottles & Jars
-  // Glass, Broken
-  // Glass or Ceramic Household Items
-  // Gold, Silver, Etc.
-  // Glues & Adhesives
-  // Grass Clippings & Sod
-  // Greeting Cards
-  // Grocery Bags
-  // Gutters
-  // Hand Tools
-  // Hearing Aid Batteries
-  // Helium Tanks
-  // Hobby Chemicals
-  // Hot/Coffee Cups
-  // House Plants
-  // Household (Alkaline) Batteries
-  // Household Furniture
-  // Jar Lids
-  // Jewelry & Coins
-  // Juice Boxes
-  // Juice Cartons
-  // Juice Jug
-  // Junk Mail
-  // Keys
-  // Kleenex - Facial Tissue
-  // Laptops
-  // Laundry Detergent Boxes
-  // Laundry Detergent Jugs
-  // Lawn Mowers & Power Equipment
-  // Lead
-  // Leaves & Non-Woody Yardwaste
-  // Lids - Deli, Coffee, Soft drink
-  // Light bulbs, Fluorescent
-  // Light bulbs, Incandescent
-  // Light bulbs, LED
-  // Lights, Christmas
-  // Lumber & Boards
-  // Magazines
-  // Mattresses & Futons
-  // Meat or Fish Trays
-  // Medicine
-  // Mercury Thermometers & Items
-  // Microwaves
-  // Milk, Juice Cartons
-  // Mirrors
-  // Motor Oil
-  // Motor Oil Containers
-  // Motor Oil Filters
-  // Mugs, Plates, Bowls
+
+  juice: {
+    carton: {
+
+    }
+  }
 }
+
+
+
+
+var boxes = {
+  butter: 'Recycle.',
+  cereal: 'Recycle. Liners go in garbage.',
+  cracker:'Recycle. Liners go in garbage.',
+  liner: 'Garbage',
+  'ice cream': 'Recycle.',
+  detergent: 'Recycle.',
+  soup: 'Recycle.',
+  milk: 'Recycle.',
+  juice: 'Recycle',
+  egg: {
+    clean: 'Recycle or compost.',
+    soiled: 'Compost.'
+  }
+};
 
 var words;
 var obj;
