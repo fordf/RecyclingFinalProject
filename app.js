@@ -134,7 +134,7 @@ var dataList = {
     grass: 'Compost.',
     yard: 'Compost.'
   },
-  gras: 'Compost.',
+  grass: 'Compost.',
   box: boxes,
   boxe: boxes,
   carton: boxes,
@@ -304,7 +304,7 @@ function removeDash(str) {
 }
 
 function ignorePlural(str) {
-  if (str[str.length - 1] === 's') {
+  if (str[str.length - 1] === 's' && str[str.length - 2]) {
     console.log('plural');
     return str.substring(0, str.length - 1);
   }

@@ -30,9 +30,17 @@ form {
 }*/
 
 button {
-  margin 10px auto;
   display: inline-block;
-  padding: 30px 40px;
+  font-family: 'Abhaya Libre';
+  font-size: 16px;
+  width: 120px;
+  height: 78px;
+  border-radius: 5px;
+}
+
+button:hover {
+  border: 1px outset orange;
+  z-index: 10;
 }
 
 input {

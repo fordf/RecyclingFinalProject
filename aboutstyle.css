@@ -10,6 +10,11 @@ header {
   border-radius: 90%;
   margin-left: 30px;
   margin-top: 60px;
+  height:300px;
+}
+
+.toptwo:hover {
+  
 }
 
 #aboutimages p {
