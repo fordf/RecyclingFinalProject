@@ -58,8 +58,9 @@ var displayScore = function() {
   heading.textContent = 'You scored ' + score + ' out of 10.';
   header.appendChild(heading);
   scoreArray.push(score);
+  localStorage.setItem('scoreArray', JSON.stringify(scoreArray));
   heading = document.createElement('h5');
-  heading.textContent = 'Your previous score was' + scoreArray[0] + '. Take the quiz again and try to beat it.';
+  heading.textContent = 'Your previous score was ' + scoreArray[0] + '. Take the quiz again and try to beat it.';
   header.appendChild(heading);
 };
 
@@ -112,7 +113,7 @@ function clicksYes(event) {
     displayScore();
     makeHeaderRow();
     quizResults();
-    storeScore();
+    // storeScore();
   } else {
     createNewQuestion();
   }
@@ -130,7 +131,7 @@ function clicksNo(event) {
     displayScore();
     makeHeaderRow();
     quizResults();
-    storeScore();
+    // storeScore();
   } else {
     createNewQuestion();
   }
@@ -146,19 +147,27 @@ function comparesAnswers() {
   }
 };
 
-//populate and retrieve local storage
-function storeScore() {
+// //populate and retrieve local storage
+// function storeScore() {
+//   if (localStorage.getItem('scoreArray')) {
+//     var scoreArrayRetrieved = localStorage.getItem('scoreArray');
+//     var scoreArrayParced = JSON.parse(scoreArrayRetrieved);
+//     scoreArray = scoreArrayParced;
+//     console.log(scoreArray);
+//   } else {
+//     var scoreArrayString = JSON.stringify(scoreArray);
+//     localStorage.setItem('previous score', scoreArrayString);
+//   }
+//   // makingQuestions();
+// };
+
+function handleLoad() {
   if (localStorage.getItem('scoreArray')) {
-    var scoreArrayRetrieved = localStorage.getItem('scoreArray');
-    var scoreArrayParced = JSON.parse(scoreArrayRetrieved);
-    scoreArray === scoreArrayParced;
+    scoreArray = JSON.parse(localStorage.getItem('scoreArray'));
     console.log(scoreArray);
-  } else {
-    var scoreArrayString = JSON.stringify(scoreArray);
-    localStorage.setItem('previous score', scoreArrayString);
   }
-  makingQuestions();
-};
+  // makingQuestions();
+}
 
 //***************
 //event listeners
@@ -166,7 +175,7 @@ function storeScore() {
 
 yes.addEventListener('submit', clicksYes);
 no.addEventListener('submit', clicksNo);
-
+window.addEventListener('load', handleLoad);
 //*****************
 //calling functions
 //*****************

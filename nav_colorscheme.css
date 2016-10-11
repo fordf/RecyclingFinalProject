@@ -18,11 +18,12 @@ nav ul, nav li {
 }
 
 nav ul {
-  margin-left: 80px;
+  margin-left: 60px;
 }
 
 nav img {
   float:left;
+  margin-left: 20px;
 }
 
 nav li {
