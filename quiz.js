@@ -1,8 +1,14 @@
 'use strict';
+
+//*********
+//variables
+//*********
+
 var quiz = document.getElementById('quiz');
 var yes = document.getElementById('yes');
 var no = document.getElementById('no');
 var table = document.getElementById('table');
+var header = document.getElementById('header');
 var allQuestions = [];
 var rightAnswers = ['No', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes'];
 var userAnswers = [];
@@ -10,12 +16,18 @@ var index = 0;
 var counter = 0;
 var score = 0;
 
+//*********
+//functions
+//*********
+
+//constructor function
 function Question(question, answer) {
   this.question = question;
   this.answer = answer;
   allQuestions.push(this);
 }
 
+//creating new question instances
 makingQuestions();
 function makingQuestions() {
   new Question('Can you recycle used pizza boxes?', 'No, grease in the pizza box can contaminate the recycling process.');
@@ -29,6 +41,8 @@ function makingQuestions() {
   new Question('Can I recycle my used clothes, shoes, or household fabrics?', 'No, all items would need to go into the garbage or be donated to a secondary store.');
   new Question('Can I recycle gift wrap?', 'Yes, provided it is paper gift wrap. Plastic, foil, or tissue paper needs to go into the garbage.');
 };
+
+//displays next question on page
 function createNewQuestion() {
   console.log(allQuestions[index].question);
   var liEl = document.createElement('li');
@@ -37,6 +51,14 @@ function createNewQuestion() {
   index ++;
 };
 
+//displays score
+var displayScore = function() {
+  var heading = document.createElement('h3');
+  heading.textContent = 'You scored ' + score + ' out of 10.';
+  header.appendChild(heading);
+};
+
+//makes table header
 var makeHeaderRow = function() {
   var tRowEl = document.createElement('tr');
   var tHeaderEl = document.createElement('th');
@@ -53,6 +75,7 @@ var makeHeaderRow = function() {
   table.appendChild(tRowEl);
 };
 
+//makes table data
 function quizResults(){
   for (var i = 0; i < allQuestions.length; i++) {
     var tRowEl = document.createElement('tr');
@@ -81,6 +104,7 @@ function clicksYes(event) {
     yes.innerHTML = '';
     no.innerHTML = '';
     comparesAnswers();
+    displayScore();
     makeHeaderRow();
     quizResults();
   } else {
@@ -97,6 +121,7 @@ function clicksNo(event) {
     yes.innerHTML = '';
     no.innerHTML = '';
     comparesAnswers();
+    displayScore();
     makeHeaderRow();
     quizResults();
   } else {
@@ -104,6 +129,7 @@ function clicksNo(event) {
   }
 };
 
+//compares answers to display results
 function comparesAnswers() {
   for (var i = 0; i < rightAnswers.length; i++) {
     if (rightAnswers[i] === userAnswers[i]) {
@@ -113,8 +139,15 @@ function comparesAnswers() {
   }
 };
 
-//event listener
+//***************
+//event listeners
+//***************
+
 yes.addEventListener('submit', clicksYes);
 no.addEventListener('submit', clicksNo);
+
+//*****************
+//calling functions
+//*****************
 
 createNewQuestion();
