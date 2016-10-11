@@ -27,12 +27,16 @@ header h3 {
   color: #1360DB;
 }
 #listeditems a{
-  color: #1360DB;
+  color: #53A021;
+  transition: 400ms all;
   text-decoration: none;
   font-family: 'Poiret One';
   font-size: 18px;
   font-weight: bold;
 }
+#listeditems a:hover{
+  font-size: 20px;
+  color: #1360DB;
 p{
   color: #444444;
   font-size: 14px;
