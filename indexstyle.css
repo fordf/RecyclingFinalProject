@@ -8,6 +8,35 @@
   display: inline-block;
   vertical-align: top;
   width: 330px;
+  position: relative;
+}
+
+.compost {
+  position: absolute;
+  display: inline-block;
+}
+
+.compost h3, .recycle h3, .garbage h3 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  color: #ffffff;
+  position: absolute;
+  margin-left: 78px;
+  margin-top: -280px;
+}
+
+.recycle {
+  position: absolute;
+  display: inline-block;
+  margin-left: 330px;
+}
+
+.garbage {
+  position: absolute;
+  display: inline-block;
+  margin-left: 660px;
+  z-index: -1;
 }
 
 form {
@@ -24,10 +53,6 @@ form {
   font-size: 150%;
   font-weight: bold;
 }
-
-/*#inputbox {
-  margin: 10px auto;
-}*/
 
 button {
   display: inline-block;
