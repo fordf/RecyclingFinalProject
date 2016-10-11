@@ -1,8 +1,9 @@
 header {
+  font-size: 30px;
   text-align: center;
   margin-top: 50px;
   margin-left: -50px;
-  font-family: 'Poiret One', cursive;
+  font-family: 'Abhaya Libre', serif;
 }
 
 section {
@@ -13,15 +14,16 @@ section {
 }
 
 #quiz {
+  font-family: 'Poiret One', cursive;
   color: #1360DB;
+  list-style: none;
+  font-size: 30px;
   max-width: 600px;
-  margin-left: 160px;
+  margin-left: 180px;
 }
 
 #buttons {
-  /*margin-top: 200px;
-  margin-left: 200px;*/
-  margin-left: 360px;
+  margin-left: 340px;
   margin-top: 130px;
   display: inline-block;
   position: absolute;
@@ -29,6 +31,8 @@ section {
 
 #yes-button {
   border: none;
+  color: #ffffff;
+  font-size: 20px;
   text-decoration: none;
   background-color: #FF7100;
   padding: 20px 40px;
@@ -45,13 +49,15 @@ section {
 
 #no-button {
   border: none;
+  color: #ffffff;
+  font-size: 20px;
   text-decoration: none;
   background-color: #FF7100;
   padding: 20px 41px;
   transition: 400ms all;
   position: absolute;
   display: inline-block;
-  margin-left: 100px;
+  margin-left: 120px;
   border-radius: 3px;
   border-bottom: 3px solid #A04700;
 }
@@ -63,7 +69,7 @@ section {
 table {
   max-width: 960px;
   margin: 0 auto;
-  margin-top: -200px;
+  margin-top: -220px;
 }
 
 table td {
