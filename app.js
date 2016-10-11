@@ -246,7 +246,7 @@ var dataList = {
   money: 'Disposing national currency is illegal. Can be fined or imprisoned. Title 18, Chapter 17 of the U.S. Code.',
   condom: {
     used: 'Garbage.',
-    unused: 'Perhaps it\'s time to get busy instead of wondering about where your trash goes.',
+    unused: 'Maybe it\'s time to get busy instead of wondering about where your trash goes.',
   },
   puppy: 'This is animal cruelty.',
   puppie: 'This is animal cruelty.',
@@ -256,9 +256,12 @@ var dataList = {
   toothpick: 'Garbage.',
   toothbrush: 'Garbage.',
   oil: {
-    cooking: 'Contain. Seal. Recycle.',
-    motor: 'Contain. Seal. Recycle.',
+    cooking: 'Contain it. Seal it. Recycle.',
+    'fat & grease': 'Contain it. Seal it. Garbage.',
+    motor: 'Contain it. Seal it. Recycle.',
   },
+  fat: 'Contain it. Seal it. Garbage.',
+  grease: 'Contain it. Seal it. Garbage.',
   tupperware: {
     plastic: 'Recycle.',
     pyrex: 'Garbage.',
