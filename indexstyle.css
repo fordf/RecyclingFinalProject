@@ -8,6 +8,24 @@
   display: inline-block;
   vertical-align: top;
   width: 330px;
+  position: relative;
+}
+
+.compost {
+  position: absolute;
+  display: inline-block;
+}
+
+.recycle {
+  position: absolute;
+  display: inline-block;
+  margin-left: 330px;
+}
+
+.garbage {
+  position: absolute;
+  display: inline-block;
+  margin-left: 660px;
 }
 
 form {
@@ -24,10 +42,6 @@ form {
   font-size: 150%;
   font-weight: bold;
 }
-
-/*#inputbox {
-  margin: 10px auto;
-}*/
 
 button {
   display: inline-block;
