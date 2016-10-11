@@ -36,6 +36,7 @@ form {
 button {
   margin 10px auto;
   display: inline-block;
+  padding: 30px 40px;
 }
 
 input {
@@ -62,4 +63,11 @@ input {
 #submitbutton:active {
   /*background-color: #99dd99;*/
   border: 3px inset orange;
+}
+
+#searchStr {
+  width: 400px;
+  height: 50px;
+  margin: 10px auto;
+  text-align: center;
 }
