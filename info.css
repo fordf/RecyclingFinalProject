@@ -9,14 +9,13 @@ section {
   height: 200px;
   max-width: 960px;
   margin: 0 auto;
-  border: 1px solid black;
   position: relative;
 }
 
 #quiz {
   color: #1360DB;
   max-width: 600px;
-  margin-left: 180px;
+  margin-left: 160px;
 }
 
 #buttons {
