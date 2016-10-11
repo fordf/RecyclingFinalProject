@@ -219,7 +219,17 @@ var dataList = {
     aluminum: {
       clean: 'Recycle. Do not crumble up.',
       'food-soiled': 'Garbage.',
-    }
+    },
+  },
+  paint: {
+    contained: {
+      latex: 'Garbage. Let paint dry and harden before disposal.',
+      'oil-based': 'Garbage. Let paint dry and harden before disposal.',
+    },
+    uncontained: 'Not disposable. Place in container, let dry and harden.',
+  },
+  wrapper: {
+    candy: 'Garbage.'
   }
 };
 
