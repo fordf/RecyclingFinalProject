@@ -204,7 +204,7 @@ var dataList = {
     waxed: 'Compost bin.',
     'punch holes': 'Compost or garbage.'
   },
-  cans: {
+  can: {
     beverage: 'Recycle.',
     aerosol: 'Garbage.',
     paint: 'Garbage.',
@@ -213,9 +213,15 @@ var dataList = {
       lid: {
         loose: 'Garbage.',
         attached: 'Recycle.',
-      }
+      },
   },
-}
+  foil: {
+    aluminum: {
+      clean: 'Recycle.',
+      dirty: 'Garbage.',
+    }
+  }
+};
 
 
 
