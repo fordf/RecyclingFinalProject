@@ -203,8 +203,25 @@ var dataList = {
     shredded: 'Compost or garbage.',
     waxed: 'Compost bin.',
     'punch holes': 'Compost or garbage.'
+  },
+  can: {
+    beverage: 'Recycle.',
+    aerosol: 'Garbage.',
+    paint: 'Garbage.',
+    steel: 'Recycle.',
+    tin: 'Recycle.',
+      lid: {
+        loose: 'Garbage.',
+        attached: 'Recycle.',
+      },
+  },
+  foil: {
+    aluminum: {
+      clean: 'Recycle.',
+      dirty: 'Garbage.',
+    }
   }
-}
+};
 
 
 
