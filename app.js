@@ -217,8 +217,8 @@ var dataList = {
   },
   foil: {
     aluminum: {
-      clean: 'Recycle.',
-      dirty: 'Garbage.',
+      clean: 'Recycle. Do not crumble up.',
+      'food-soiled': 'Garbage.',
     }
   }
 };
