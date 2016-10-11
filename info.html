@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Quiz/Information</title>
+    <title>Quiz</title>
     <link rel="stylesheet" href="nav_colorscheme.css"></link>
     <link rel="stylesheet" href="info.css"></link>
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
@@ -15,18 +15,21 @@
         <li><a href="about.html">About Us</a></li>
       </ul>
     </nav>
-    <section>
-      <table id="table"></table>
+    <header>
+      <h1>Quiz Time</h1>
+    </header>
+    <section id="quiz-section">
       <ul id="quiz"></ul>
       <div id="buttons">
         <form id="yes">
-          <input type="submit" value="Yes"/>
+          <input id="yes-button" type="submit" value="Yes"/>
         </form>
-        <form id="no-form">
-          <input type="submit" value="No"/>
+        <form id="no">
+          <input id="no-button" type="submit" value="No"/>
         </form>
       </div>
       </section>
+      <table id="table"></table>
     <script src="quiz.js"></script>
   </body>
 </html>
