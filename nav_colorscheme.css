@@ -10,14 +10,14 @@ nav {
   min-width: 800px;
 }
 
-ul, li {
+nav ul, nav li {
   display: inline-block;
   float:left;
   padding:0px;
   margin:0px;
 }
 
-ul {
+nav ul {
   margin-left: 80px;
 }
 
@@ -25,7 +25,7 @@ nav img {
   float:left;
 }
 
-li {
+nav li {
   width: 25%;
   min-width: 240px;
   padding-top: 14px;
@@ -36,13 +36,13 @@ li {
   text-align: center;
 }
 
-a {
+nav a {
   text-decoration: none;
   color: #53A021;
   transition: 400ms all;
 }
 
-a:hover {
+nav a:hover {
   font-size: 33px;
   color: #1360DB;
 }
