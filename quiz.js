@@ -1,7 +1,7 @@
 'use strict';
 var quiz = document.getElementById('quiz');
 var yes = document.getElementById('yes');
-var no = document.getElementById('no-form');
+var no = document.getElementById('no');
 var table = document.getElementById('table');
 var allQuestions = [];
 var rightAnswers = ['No', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes'];
