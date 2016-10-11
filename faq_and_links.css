@@ -5,27 +5,6 @@ header {
   margin-left: 300px;
   color: #1360DB;
 }
-
-#aboutimages img {
-  border-radius: 90%;
-  margin-left: 30px;
-  margin-top: 60px;
-}
-
-#aboutimages p {
-  position: absolute;
-  margin-top: -250px;
-  margin-left: 400px;
-  max-width: 700px;
-}
-
-#aboutimages .item {
-  position: absolute;
-  margin-top: -100px;
-}
-
-#aboutimages h3 {
-  position: absolute;
-  margin-top: 70px;
-  margin-left: 400px;
+header h3 {
+  font-size: 15px;
 }
