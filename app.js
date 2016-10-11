@@ -134,7 +134,7 @@ var dataList = {
     grass: 'Compost.',
     yard: 'Compost.'
   },
-  gras: 'Compost.',
+  grass: 'Compost.',
   box: boxes,
   boxe: boxes,
   carton: boxes,
@@ -219,12 +219,41 @@ var dataList = {
     aluminum: {
       clean: 'Recycle. Do not crumble up.',
       'food-soiled': 'Garbage.',
-    }
-  }
+    },
+  },
+  paint: {
+    contained: {
+      latex: 'Garbage. Let paint dry and harden before disposal.',
+      'oil-based': 'Garbage. Let paint dry and harden before disposal.',
+    },
+    uncontained: 'Not disposable. Place in container, let dry and harden.',
+  },
+  wrapper: {
+    candy: 'Garbage.',
+    cigar: 'Garbage.',
+    cigarette: 'Garbage.',
+  },
+  cartridge: {
+    printer: 'Follow manufacturer\'s recycling instruction. Otheriwse, Garbage.',
+    toner: 'Follow manufacturer\'s recycling instruction. Otheriwse, Garbage.',
+  },
+  printer: {
+    cartridge: 'Follow manufacturer\'s recycling instruction. Otheriwse, Garbage.',
+  },
+  toner: {
+    cartridge: 'Follow manufacturer\'s recycling instruction. Otheriwse, Garbage.',
+  },
+  money: 'Disposing national currency is illegal. Can be fined or imprisoned. Title 18, Chapter 17 of the U.S. Code.',
+  condom: {
+    used: 'Garbage.',
+    unused: 'Perhaps it\'s time to get busy instead of wondering about where your trash goes.',
+  },
+  puppy: 'This is animal cruelty.',
+  puppie: 'This is animal cruelty.',
+  dog: 'This is animal cruelty.',
+  kitten: 'This is animal cruelty.',
+  cat: 'This is animal cruelty.',
 };
-
-
-
 
 function narrowDown(object) {
   obj = object;
@@ -304,7 +333,7 @@ function removeDash(str) {
 }
 
 function ignorePlural(str) {
-  if (str[str.length - 1] === 's') {
+  if (str[str.length - 1] === 's' && str[str.length - 2]) {
     console.log('plural');
     return str.substring(0, str.length - 1);
   }
