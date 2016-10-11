@@ -229,12 +229,31 @@ var dataList = {
     uncontained: 'Not disposable. Place in container, let dry and harden.',
   },
   wrapper: {
-    candy: 'Garbage.'
-  }
+    candy: 'Garbage.',
+    cigar: 'Garbage.',
+    cigarette: 'Garbage.',
+  },
+  cartridge: {
+    printer: 'Follow manufacturer\'s recycling instruction. Otheriwse, Garbage.',
+    toner: 'Follow manufacturer\'s recycling instruction. Otheriwse, Garbage.',
+  },
+  printer: {
+    cartridge: 'Follow manufacturer\'s recycling instruction. Otheriwse, Garbage.',
+  },
+  toner: {
+    cartridge: 'Follow manufacturer\'s recycling instruction. Otheriwse, Garbage.',
+  },
+  money: 'Disposing national currency is illegal. Can be fined or imprisoned. Title 18, Chapter 17 of the U.S. Code.',
+  condom: {
+    used: 'Garbage.',
+    unused: 'Perhaps it\'s time to get busy instead of wondering about where your trash goes.',
+  },
+  puppy: 'This is animal cruelty.',
+  puppie: 'This is animal cruelty.',
+  dog: 'This is animal cruelty.',
+  kitten: 'This is animal cruelty.',
+  cat: 'This is animal cruelty.',
 };
-
-
-
 
 function narrowDown(object) {
   obj = object;
