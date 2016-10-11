@@ -28,6 +28,11 @@ var boxes = {
   tissue: 'Recycle. Try to remove plastic liner, but not necessary.'
 };
 
+var medicineBottle = {
+    'Non-prescription': 'Pill bottles such as aspirin or vitamin bottles are recyclable. Avoid putting leftover pills in the garbage or down the drain.',
+    prescription: 'Translucent prescription medicine vials go in the garbage. Avoid putting leftover pills in the garbage or down the drain.'
+}
+
 var plastic = {
   'blister packaging (really hard to open stuff)': 'Garbage.',
   '6-pack rings': 'Snip apart, bag, and place in garbage.',
@@ -36,19 +41,25 @@ var plastic = {
   cup: 'Clean and recycle.'
 };
 
+var cleanAndRecycle = 'Clean, dry, and recycle.';
+var container = {
+  soda: cleanAndRecycle,
+  water: cleanAndRecycle,
+  detergent: cleanAndRecycle,
+  bleach: cleanAndRecycle,
+  pesticide: 'Garbage.',
+  'motor oil': 'Garbage',
+  'hazardous material': 'Garbage.',
+  glass: cleanAndRecycle,
+  pill: medicineBottle,
+  medicine: medicineBottle
+};
+
 var light = {
     incandescent: 'garbage',
     fluorescent: 'drop off only',
     led: 'garbage',
     christmas: 'during the holidays, drop off, otherwise, garbage'
-};
-
-var cardboard = {
-  greasy: 'Compost (Food & Yard Waste cart), can\'t be recycled.',
-  waxed: 'Compost (Food & Yard Waste cart), can\'t be recycled.',
-  corrugated: 'Recycle.',
-  wet: 'Compost (Food & Yard Waste cart).',
-  foamcore: 'Garbage'
 };
 
 var book = {
@@ -75,6 +86,8 @@ var dataList = {
   //   glass: 'Clean and recycle.',
   //   'shampoo/lotion': 'Clean and recycle.'
   // },
+
+  bucket: 'Reuse if possible. If it contained hazardous waste, it goes in the garbage. Otherwise, recycle.',
   kleenex: 'Garbage.',
   tissue: 'Garbage.',
   wipe: 'Garbage.',
@@ -83,6 +96,7 @@ var dataList = {
   cd: 'Garbage.',
   dvd: 'Garbage.',
   hanger: 'Garbage.',
+  trash: 'Really?',
   diaper: 'Flush excrement down the toilet, then bag and put in garbage.',
   cork: 'Recycle through the Cork ReHarvest Program, which has drop boxes at PCC, Whole Foods Markets, and Wine World Warehouses. Otherwise they are garbage.',
   wrap: {
@@ -109,8 +123,20 @@ var dataList = {
   magazine: 'Recycle, or donate.',
   newspaper: 'Recycle.',
   notebook: 'Throw any spiral in garbage, Recycle paper.',
-  cardboard: cardboard,
+  cardboard: {
+    greasy: 'Compost (Food & Yard Waste cart), can\'t be recycled.',
+    waxed: 'Compost (Food & Yard Waste cart), can\'t be recycled.',
+    corrugated: 'Recycle.',
+    wet: 'Compost (Food & Yard Waste cart).',
+    foamcore: 'Garbage'
+  },
+  clipping: {
+    grass: 'Compost.',
+    yard: 'Compost.'
+  },
+  gras: 'Compost.',
   box: boxes,
+  boxe: boxes,
   carton: boxes,
   napkin: {
     unused: 'Recycle',
@@ -119,6 +145,8 @@ var dataList = {
   },
   light: light,
   lightbulb: light,
+  pill: 'Dispose of pills with TakeBackYourMeds.org. Do not put in garbage or down the drain unless no other option exists.',
+  medicine: 'Dispose of medicine with TakeBackYourMeds.org. Do not put in garbage or down the drain unless no other option exists.',
   antifreeze: 'Take used antifreeze to the HHW locations for recycling or ask your local auto shop to recycle it for you. Do not pour out.',
   bag: {
     paper: {
@@ -135,27 +163,26 @@ var dataList = {
 
     'pet food': 'Garbage.'
   },
-
   battery: {
     alkaline: 'Garbage or drop off recycling.',
     rechargeable: 'Drop off recycling.'
   },
-
-  cardboard: cardboard,
+  cartridge: 'Many stores refill and recycle them. Most companies that make cartridges also provide means to return and recycle your empty cartridge. Otherwise, they go in the garbage.',
   lid: {
     'Diameter larger than 3"': 'Recycle.',
     'Diameter smaller than 3"': 'Garbage.'
   },
-  juice: {
-    carton: {
-    }
-  },
+  tarp: 'Garbage.',
+  toy: 'Recycle metal or rigid plastic toys that are 3 feet or smaller on all sides. Items that are not all metal or all plastic go in the garbage.',
+  bottle: container,
+  jar: container,
+  jug: container,
+  tub: container,
+  vial: container,
+  container: container,
   plastic: {
     cup: 'Clean and recycle',
     utensil: 'Garbage, unless marked compostable.',
-    bottle: 'You can recycle all plastic food containers: bottles, dairy tubs, jugs, and jars. Clean first.',
-    jar: 'You can recycle all plastic food containers: bottles, dairy tubs, jugs, and jars. Clean first.',
-    jug: 'You can recycle all plastic food containers: bottles, dairy tubs, jugs, and jars. Clean first.'
   },
   paper: {
     cup: {
@@ -208,7 +235,9 @@ function narrowDown(object) {
   if (!found && obj !== dataList){
     renderButtons(obj);
   } else if (!found) {
-    console.log('not found');
+    mainDiv.innerHTML = '';
+    mainDiv.textContent = 'I don\'t know how to handle ' + searchStr + '. Try describing the item by its material.';
+    // console.log('not found');
   }
 }
 function handleSubmit(event) {
