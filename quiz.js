@@ -15,6 +15,7 @@ var userAnswers = [];
 var index = 0;
 var counter = 0;
 var score = 0;
+var scoreArray = [];
 
 //*********
 //functions
@@ -55,6 +56,10 @@ function createNewQuestion() {
 var displayScore = function() {
   var heading = document.createElement('h3');
   heading.textContent = 'You scored ' + score + ' out of 10.';
+  header.appendChild(heading);
+  scoreArray.push(score);
+  heading = document.createElement('h5');
+  heading.textContent = 'Your previous score was' + scoreArray[0] + '. Take the quiz again and try to beat it.';
   header.appendChild(heading);
 };
 
@@ -107,6 +112,7 @@ function clicksYes(event) {
     displayScore();
     makeHeaderRow();
     quizResults();
+    storeScore();
   } else {
     createNewQuestion();
   }
@@ -124,6 +130,7 @@ function clicksNo(event) {
     displayScore();
     makeHeaderRow();
     quizResults();
+    storeScore();
   } else {
     createNewQuestion();
   }
@@ -137,6 +144,20 @@ function comparesAnswers() {
       console.log(score);
     }
   }
+};
+
+//populate and retrieve local storage
+function storeScore() {
+  if (localStorage.getItem('scoreArray')) {
+    var scoreArrayRetrieved = localStorage.getItem('scoreArray');
+    var scoreArrayParced = JSON.parse(scoreArrayRetrieved);
+    scoreArray === scoreArrayParced;
+    console.log(scoreArray);
+  } else {
+    var scoreArrayString = JSON.stringify(scoreArray);
+    localStorage.setItem('previous score', scoreArrayString);
+  }
+  makingQuestions();
 };
 
 //***************
