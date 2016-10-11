@@ -4,7 +4,7 @@ var yes = document.getElementById('yes');
 var no = document.getElementById('no-form');
 var table = document.getElementById('table');
 var allQuestions = [];
-var rightAnswers = ['no', 'no', 'yes', 'no', 'yes', 'yes', 'yes', 'no', 'no', 'yes'];
+var rightAnswers = ['No', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes'];
 var userAnswers = [];
 var index = 0;
 var counter = 0;
@@ -37,6 +37,22 @@ function createNewQuestion() {
   index ++;
 };
 
+var makeHeaderRow = function() {
+  var tRowEl = document.createElement('tr');
+  var tHeaderEl = document.createElement('th');
+  tHeaderEl.textContent = 'Question';
+  tRowEl.appendChild(tHeaderEl);
+  table.appendChild(tRowEl);
+  tHeaderEl = document.createElement('th');
+  tHeaderEl.textContent = 'Your Answer';
+  tRowEl.appendChild(tHeaderEl);
+  table.appendChild(tRowEl);
+  tHeaderEl = document.createElement('th');
+  tHeaderEl.textContent = 'Correct Answer';
+  tRowEl.appendChild(tHeaderEl);
+  table.appendChild(tRowEl);
+};
+
 function quizResults(){
   for (var i = 0; i < allQuestions.length; i++) {
     var tRowEl = document.createElement('tr');
@@ -58,13 +74,14 @@ function quizResults(){
 function clicksYes(event) {
   counter += 1;
   event.preventDefault();
-  userAnswers.push('yes');
+  userAnswers.push('Yes');
   console.log('Clicked yes');
   quiz.innerHTML = '';
   if (counter > 9) {
     yes.innerHTML = '';
     no.innerHTML = '';
     comparesAnswers();
+    makeHeaderRow();
     quizResults();
   } else {
     createNewQuestion();
@@ -73,13 +90,14 @@ function clicksYes(event) {
 function clicksNo(event) {
   counter += 1;
   event.preventDefault();
-  userAnswers.push('no');
+  userAnswers.push('No');
   console.log('Clicked no');
   quiz.innerHTML = '';
   if (counter > 9) {
     yes.innerHTML = '';
     no.innerHTML = '';
     comparesAnswers();
+    makeHeaderRow();
     quizResults();
   } else {
     createNewQuestion();

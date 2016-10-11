@@ -4,3 +4,16 @@
   display: inline-block;
   position: absolute;
 }
+
+table {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+table td {
+  border: 1px solid black;
+}
+
+table th {
+  border: 2px solid black;
+}
