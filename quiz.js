@@ -2,6 +2,7 @@
 var quiz = document.getElementById('quiz');
 var yes = document.getElementById('yes');
 var no = document.getElementById('no-form');
+var table = document.getElementById('table');
 var allQuestions = [];
 var rightAnswers = ['no', 'no', 'yes', 'no', 'yes', 'yes', 'yes', 'no', 'no', 'yes'];
 var userAnswers = [];
@@ -36,6 +37,23 @@ function createNewQuestion() {
   index ++;
 };
 
+function quizResults(){
+  for (var i = 0; i < allQuestions.length; i++) {
+    var tRowEl = document.createElement('tr');
+    var tDataEl = document.createElement('td');
+    tDataEl.textContent = allQuestions[i].question;
+    tRowEl.appendChild(tDataEl);
+    table.appendChild(tRowEl);
+    tDataEl = document.createElement('td');
+    tDataEl.textContent = userAnswers[i];
+    tRowEl.appendChild(tDataEl);
+    tDataEl = document.createElement('td');
+    tDataEl.textContent = allQuestions[i].answer;
+    tRowEl.appendChild(tDataEl);
+    table.appendChild(tRowEl);
+  }
+}
+
 //event listeners
 function clicksYes(event) {
   counter += 1;
@@ -47,6 +65,7 @@ function clicksYes(event) {
     yes.innerHTML = '';
     no.innerHTML = '';
     comparesAnswers();
+    quizResults();
   } else {
     createNewQuestion();
   }
@@ -61,6 +80,7 @@ function clicksNo(event) {
     yes.innerHTML = '';
     no.innerHTML = '';
     comparesAnswers();
+    quizResults();
   } else {
     createNewQuestion();
   }
