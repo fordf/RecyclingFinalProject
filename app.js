@@ -38,7 +38,7 @@ var plastic = {
   '6-pack rings': 'Snip apart, bag, and place in garbage.',
   'berry tray': 'Clean and recycle.',
   utensil: 'Garbage, unless marked compostable.',
-  cup: 'Clean and recycle.'
+  cup: 'Clean and recycle.',
 };
 
 var cleanAndRecycle = 'Clean, dry, and recycle.';
@@ -253,6 +253,17 @@ var dataList = {
   dog: 'This is animal cruelty.',
   kitten: 'This is animal cruelty.',
   cat: 'This is animal cruelty.',
+  toothpick: 'Garbage.',
+  toothbrush: 'Garbage.',
+  oil: {
+    cooking: 'Contain. Seal. Recycle.',
+    motor: 'Contain. Seal. Recycle.',
+  },
+  tupperware: {
+    plastic: 'Recycle.',
+    pyrex: 'Garbage.',
+  },
+  pyrex: 'Garbage.',
 };
 
 function narrowDown(object) {
