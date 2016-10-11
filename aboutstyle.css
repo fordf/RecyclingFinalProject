@@ -2,14 +2,19 @@ header {
   margin-top: 50px;
   font-family: 'Poiret One', cursive;
   font-size: 50px;
-  margin-left: 300px;
+  padding: 10px 0px 10px 200px;
   color: #1360DB;
+  width: 100%;
+  background-color: #dcdcdc;
+  text-shadow: -3px 3px white;
 }
 
 #aboutimages img {
   border-radius: 90%;
   margin-left: 30px;
   margin-top: 60px;
+  height:300px;
+  width: 300px;
 }
 
 #aboutimages p {
@@ -17,6 +22,8 @@ header {
   margin-top: -250px;
   margin-left: 400px;
   max-width: 700px;
+  font-family: 'Abhaya Libre';
+  color: #444444;
 }
 
 #aboutimages .item {
@@ -25,7 +32,10 @@ header {
 }
 
 #aboutimages h3 {
+  font-family: 'Poiret One';
+  font-weight: bold;
   position: absolute;
   margin-top: 70px;
   margin-left: 400px;
+  font-size: 22px;
 }
