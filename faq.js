@@ -10,9 +10,11 @@ function handleClick(event) {
   if (state[id] === 'hidden') {
     titles[id] = event.target.textContent;
     event.target.innerHTML = event.target.textContent + info[id];
+    event.target.setAttribute('class', 'big');
     state[id] = 'shown';
   } else if (state[id] === 'shown') {
     event.target.innerHTML = titles[id];
+    event.target.setAttribute('class', 'mainlis');
     state[id] = 'hidden';
   }
 }
