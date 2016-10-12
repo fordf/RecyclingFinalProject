@@ -347,9 +347,9 @@ function narrowDown(object) {
   }
 }
 //function refreshButton :
-function refreshBrowser(){
-    window.location.reload();
-}
+// function refreshBrowser(){
+//     window.location.reload();
+// }
 function handleSubmit(event) {
   event.preventDefault();
   // console.log(e.target.item.value);
