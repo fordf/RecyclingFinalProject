@@ -10,7 +10,7 @@ var no = document.getElementById('no');
 var table = document.getElementById('table');
 var header = document.getElementById('header');
 var allQuestions = [];
-var rightAnswers = ['No', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes'];
+var rightAnswers = [];
 var userAnswers = [];
 var index = 0;
 var counter = 0;
@@ -25,22 +25,29 @@ var scoreArray = [];
 function Question(question, answer) {
   this.question = question;
   this.answer = answer;
+  this.shortAnswer = function () {
+    if (this.answer.toLowerCase.includes('no')) {
+      return 'No';
+    } else {
+      return 'Yes';
+    }
+  };
   allQuestions.push(this);
 }
 
 //creating new question instances
-makingQuestions();
 function makingQuestions() {
   new Question('Can you recycle used pizza boxes?', 'No, grease in the pizza box can contaminate the recycling process.');
   new Question('Can you recycle hardcover books?', 'No, the glue in the books binding can have a negative impact on the recycling process.');
   new Question('Can you recycle spiral bound notebooks?', 'Yes, but remove and dispose of the spiral binding in the garbage first.');
-  new Question('Do I need to know what the numbers on the plastic bottle recyclable mean?', 'No, Seattle does not recycle by number or symbol.');
+  new Question('Do you need to know what the numbers on the plastic bottle recyclable mean?', 'No, Seattle does not recycle by number or symbol.');
   new Question('Are shampoo/lotion bottles recyclable?', 'Yes, but they must be thoroughly rinsed.');
-  new Question('Can I recycle grocery bags?', 'Yes, but they must be bundled. Single bags can clog up the machine.');
-  new Question('Can I recycle shrink wrap?', 'Yes, but it must be clean and dry and put in a plastic bag with other plastic items.');
-  new Question('Can I recycle ammunition?', 'No, ammunition is not acceptable in garbage or household hazardous waste facilities.');
-  new Question('Can I recycle my used clothes, shoes, or household fabrics?', 'No, all items would need to go into the garbage or be donated to a secondary store.');
-  new Question('Can I recycle gift wrap?', 'Yes, provided it is paper gift wrap. Plastic, foil, or tissue paper needs to go into the garbage.');
+  new Question('Can you recycle grocery bags?', 'Yes, but they must be bundled. Single bags can clog up the machine.');
+  new Question('Can you recycle shrink wrap?', 'Yes, but it must be clean and dry and put in a plastic bag with other plastic items.');
+  new Question('Can you recycle ammunition?', 'No, ammunition is not acceptable in garbage or household hazardous waste facilities.');
+  new Question('Can you recycle my used clothes, shoes, or household fabrics?', 'No, all items would need to go into the garbage or be donated to a secondary store.');
+  new Question('Can you recycle gift wrap?', 'Yes, provided it is paper gift wrap. Plastic, foil, or tissue paper needs to go into the garbage.');
+  new Question('Can you recycle bleach bottles?', 'Yes, but it must be cleaned and dried.');
 };
 
 //displays next question on page
@@ -147,26 +154,11 @@ function comparesAnswers() {
   }
 };
 
-// //populate and retrieve local storage
-// function storeScore() {
-//   if (localStorage.getItem('scoreArray')) {
-//     var scoreArrayRetrieved = localStorage.getItem('scoreArray');
-//     var scoreArrayParced = JSON.parse(scoreArrayRetrieved);
-//     scoreArray = scoreArrayParced;
-//     console.log(scoreArray);
-//   } else {
-//     var scoreArrayString = JSON.stringify(scoreArray);
-//     localStorage.setItem('previous score', scoreArrayString);
-//   }
-//   // makingQuestions();
-// };
-
 function handleLoad() {
   if (localStorage.getItem('scoreArray')) {
     scoreArray = JSON.parse(localStorage.getItem('scoreArray'));
     console.log(scoreArray);
   }
-  // makingQuestions();
 }
 
 //***************
@@ -180,4 +172,5 @@ window.addEventListener('load', handleLoad);
 //calling functions
 //*****************
 
+makingQuestions();
 createNewQuestion();
