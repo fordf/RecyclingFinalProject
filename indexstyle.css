@@ -3,7 +3,7 @@
   width: 1000px;
   vertical-align: top;
   margin: 0 auto;
-  left: -28px;
+  left: -19px;
 }
 
 #mainimages img {
@@ -20,11 +20,14 @@
 .garbage {
   position: relative;
   display: inline-block;
+  z-index: -1;
 }
 
 .recycle {
   position: relative;
   display: inline-block;
+  margin-left: 300px;
+  z-index: -1;
   margin-left: 0px;
 }
 
