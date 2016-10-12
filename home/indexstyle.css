@@ -112,6 +112,10 @@ input {
   border: 3px inset orange;
 }
 
+.hidden {
+   display: none;
+ }
+
 #searchStr {
   vertical-align: middle;
   max-width: 400px;

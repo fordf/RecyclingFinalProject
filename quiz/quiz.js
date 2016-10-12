@@ -10,20 +10,24 @@ var no = document.getElementById('no');
 var table = document.getElementById('table');
 var header = document.getElementById('header');
 var allQuestions = [];
+
+// var rightAnswers = ['No', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes'];
+
 var rightAnswers = [];
 var userAnswers = [];
-var index = 0;
 var counter = 0;
 var score = 0;
 var scoreArray = [];
+var randomQuestion;
 
 //*********
 //functions
 //*********
 
 //constructor function
-function Question(question, answer) {
+function Question(question, rightAnswer, answer) {
   this.question = question;
+  this.rightAnswer = rightAnswer;
   this.answer = answer;
   this.shortAnswer = function () {
     if (this.answer.toLowerCase.includes('no')) {
@@ -51,13 +55,16 @@ function makingQuestions() {
 };
 
 //displays next question on page
-function createNewQuestion() {
-  console.log(allQuestions[index].question);
+var createNewQuestion = function() {
+  randomQuestion = Math.floor(Math.random() * allQuestions.length);
+  console.log (randomQuestion);
   var liEl = document.createElement('li');
-  liEl.textContent = allQuestions[index].question;
+  liEl.textContent = allQuestions[randomQuestion].question;
   quiz.appendChild(liEl);
-  index ++;
+  rightAnswers.push(allQuestions[randomQuestion].rightAnswer);
+  allQuestions.splice(randomQuestion, 1);
 };
+createNewQuestion();
 
 //displays score
 var displayScore = function() {
@@ -171,6 +178,7 @@ window.addEventListener('load', handleLoad);
 //*****************
 //calling functions
 //*****************
+
 
 makingQuestions();
 createNewQuestion();

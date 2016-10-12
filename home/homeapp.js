@@ -274,7 +274,7 @@ function makeDataList(){
       pyrex: 'Garbage.',
     },
     pyrex: 'Garbage.',
-    glas: {
+    glass: {
       bottle: 'Recycle.',
       jar: 'Recycle.',
       ceramic: 'Garbage.',
@@ -305,7 +305,10 @@ function makeDataList(){
     stapler: 'Garbage.',
     paperclip: 'Garbage.',
   };
+
 }
+//get newSearchButton (by id?)
+var newSearchButton = document.getElementById('newSearchButton');
 
 // searches for user's input in the dataList
 function narrowDown(object) {
@@ -321,7 +324,8 @@ function narrowDown(object) {
         console.log('found it: ' + obj[currentWord]);
         mainDiv.innerHTML = '';
         mainDiv.textContent = obj[currentWord];
-        animate(obj[currentWord]);
+        newSearchButton.style.display='block';
+        newSearchButton.addEventListener('click', refreshBrowser);
       } else if (typeof(obj[currentWord]) === 'object') {
         console.log('found object: ' + obj[currentWord]);
         obj = obj[currentWord];
@@ -339,10 +343,20 @@ function narrowDown(object) {
     mainDiv.innerHTML = '';
     mainDiv.textContent = 'I don\'t know how to handle ' + searchStr + '. Try describing the item by its material.';
     // console.log('not found');
+    //unhide it (change display to block)
+    newSearchButton.style.display='block';
+    //addEventListener for newSearchButton
+    newSearchButton.addEventListener('click', refreshBrowser);
   }
 }
 
-// takes input and makes an array of seperate words
+//takes input and makes an array of seperate words
+
+//function refreshButton :
+function refreshBrowser() {
+     window.location.reload();
+}
+
 function handleSubmit(event) {
   event.preventDefault();
   // console.log(e.target.item.value);
@@ -367,6 +381,8 @@ function handleClick(event) {
     obj = which;
     renderButtons(obj);
   }
+  newSearchButton.style.display='block';
+  newSearchButton.addEventListener('click', refreshBrowser);
 }
 
 function renderButtons(object) {
