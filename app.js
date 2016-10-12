@@ -49,7 +49,7 @@ var container = {
   bleach: cleanAndRecycle,
   pesticide: 'Garbage.',
   'motor oil': 'Garbage',
-  'hazardous material': 'Garbage.',
+  'hazardous': 'Garbage.',
   glass: cleanAndRecycle,
   pill: medicineBottle,
   medicine: medicineBottle
@@ -139,9 +139,9 @@ var dataList = {
   boxe: boxes,
   carton: boxes,
   napkin: {
-    unused: 'Recycle',
+    unused: 'Recycle.',
     'food-soiled': 'Compost.',
-    'chemical/body-fluid soiled': 'Garbage. Bagged preferably.',
+    'soiled': 'Garbage. Bagged preferably.',
   },
   light: light,
   lightbulb: light,
@@ -268,6 +268,23 @@ var dataList = {
     pyrex: 'Garbage.',
   },
   pyrex: 'Garbage.',
+  glas: {
+    bottle: 'Recycle.',
+    jar: 'Recycle.',
+    ceramic: 'Garbage.',
+    eye: 'Garbage.',
+    broken: 'Recycle (large pieces). Garbage (shards).',
+  },
+  computer: {
+    laptop: 'Recycle at electronics recycling center.',
+    desktop: 'Recycle at electronics recycling center.',
+    tablet: 'Recycle at electronics recycling center.',
+    ipad: 'Recycle at electronics recycling center.',
+  },
+  phone: {
+    'land line': 'Recycle at electronics recycling centers.',
+    mobile: 'Recycle at electronics recycling centers.',
+  }
 };
 
 function narrowDown(object) {
