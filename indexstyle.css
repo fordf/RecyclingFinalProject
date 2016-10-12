@@ -1,7 +1,9 @@
 #mainimages {
+  position: relative;
   width: 1000px;
   vertical-align: top;
   margin: 0 auto;
+  left: -28px;
 }
 
 #mainimages img {
@@ -16,23 +18,23 @@
 }
 
 .garbage {
-  position: absolute;
+  position: relative;
   display: inline-block;
-  left: 110px;
   z-index: -1;
 }
 
 .recycle {
-  position: absolute;
+  position: relative;
   display: inline-block;
   margin-left: 300px;
   z-index: -1;
+  margin-left: 0px;
 }
 
 .compost {
-  position: absolute;
+  position: relative;
   display: inline-block;
-  margin-left: 640px;
+  margin-left: 0px;
   z-index: -1;
 }
 
@@ -87,12 +89,13 @@ input {
   width: 300px;
   height: 30px;
   font-family: 'Poiret One';
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 #submitbutton {
   padding: 10px 20px;
-  background-color: #ff9849;
+  background-color: #ffc879;
   width: auto;
   height: auto;
   margin-left: 30px;
