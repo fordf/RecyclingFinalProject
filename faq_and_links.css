@@ -54,6 +54,8 @@ p {
 
 .mainlis:hover, .big {
   position: relative;
-  left: 6px;
+  transition: 200ms all;
+  cursor: pointer;
+  /*left: 6px;*/
   font-size: 1.03em;
 }

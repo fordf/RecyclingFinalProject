@@ -32,10 +32,10 @@ function Question(question, answer) {
 makingQuestions();
 function makingQuestions() {
   new Question('Can you recycle used pizza boxes?', 'No, grease in the pizza box can contaminate the recycling process.');
-  new Question('Can you recycle hardback books?', 'No, the glue in the books binding can have a negative impact on the recycling process.');
+  new Question('Can you recycle hardcover books?', 'No, the glue in the books binding can have a negative impact on the recycling process.');
   new Question('Can you recycle spiral bound notebooks?', 'Yes, but remove and dispose of the spiral binding in the garbage first.');
   new Question('Do I need to know what the numbers on the plastic bottle recyclable mean?', 'No, Seattle does not recycle by number or symbol.');
-  new Question('Are shampoo/lotion bottles recyclable?', 'Yes, but they must be thoroughly rinced.');
+  new Question('Are shampoo/lotion bottles recyclable?', 'Yes, but they must be thoroughly rinsed.');
   new Question('Can I recycle grocery bags?', 'Yes, but they must be bundled. Single bags can clog up the machine.');
   new Question('Can I recycle shrink wrap?', 'Yes, but it must be clean and dry and put in a plastic bag with other plastic items.');
   new Question('Can I recycle ammunition?', 'No, ammunition is not acceptable in garbage or household hazardous waste facilities.');
@@ -57,11 +57,11 @@ var displayScore = function() {
   var heading = document.createElement('h3');
   heading.textContent = 'You scored ' + score + ' out of 10.';
   header.appendChild(heading);
+  heading = document.createElement('h5');
+  heading.textContent = 'Your previous score was ' + scoreArray[scoreArray.length - 1] + '. Take the quiz again and try to beat it.';
+  header.appendChild(heading);
   scoreArray.push(score);
   localStorage.setItem('scoreArray', JSON.stringify(scoreArray));
-  heading = document.createElement('h5');
-  heading.textContent = 'Your previous score was ' + scoreArray[0] + '. Take the quiz again and try to beat it.';
-  header.appendChild(heading);
 };
 
 //makes table header
