@@ -276,15 +276,28 @@ var dataList = {
     broken: 'Recycle (large pieces). Garbage (shards).',
   },
   computer: {
-    laptop: 'Recycle at electronics recycling center.',
-    desktop: 'Recycle at electronics recycling center.',
-    tablet: 'Recycle at electronics recycling center.',
-    ipad: 'Recycle at electronics recycling center.',
+    laptop: 'Recycle at local electronics recycling center.',
+    desktop: 'Recycle at local electronics recycling center.',
+    tablet: 'Recycle at local electronics recycling center.',
+    ipad: 'Recycle at local electronics recycling center.',
   },
   phone: {
-    'land line': 'Recycle at electronics recycling centers.',
-    mobile: 'Recycle at electronics recycling centers.',
-  }
+    'land line': 'Recycle at local electronics recycling center.',
+    mobile: 'Recycle at local electronics recycling center.',
+  },
+  pencil: 'Garbage.',
+  pen: 'Garbage.',
+  marker: 'Garbage.',
+  eraser: 'Garbage.',
+  'glue stick': 'Garbage.',
+  crayon: 'Garbage.',
+  highlighter: 'Garbage.',
+  'post-it note': 'Recycle.',
+  scissor: 'Garbage.',
+  'white-out': 'Garbage.',
+  staple: 'Garbage.',
+  stapler: 'Garbage.',
+  paperclip: 'Garbage.',
 };
 
 function narrowDown(object) {
