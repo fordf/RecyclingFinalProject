@@ -1,6 +1,6 @@
 header {
   margin-top: 50px;
-  font-family: 'Poiret One', cursive;
+  font-family: 'Abhaya Libre', 'Poiret One', cursive;
   font-size: 50px;
   color: #1360DB;
 }
@@ -56,6 +56,5 @@ p {
   position: relative;
   transition: 200ms all;
   cursor: pointer;
-  /*left: 6px;*/
   font-size: 1.03em;
 }
