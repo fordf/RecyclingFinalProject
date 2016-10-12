@@ -6,6 +6,7 @@ var searchStrEl = document.getElementById('searchStr');
 var searchStr = '';
 var words;
 var obj;
+var dataList; //var for localStorage function
 
 var boxes = {
   butter: 'Recycle.',
@@ -67,8 +68,9 @@ var book = {
   hardcover: 'Garbage.',
   softcover: 'Recycle.'
 };
-
-var dataList = {
+//function to wrap all objects created to localStorage
+function makeDataList(){
+dataList = {
   styrofoam: 'Anything styrofoam goes in the garbage.',
   aluminum: {
     foil: {
@@ -276,16 +278,30 @@ var dataList = {
     broken: 'Recycle (large pieces). Garbage (shards).',
   },
   computer: {
-    laptop: 'Recycle at electronics recycling center.',
-    desktop: 'Recycle at electronics recycling center.',
-    tablet: 'Recycle at electronics recycling center.',
-    ipad: 'Recycle at electronics recycling center.',
+    laptop: 'Recycle at local electronics recycling center.',
+    desktop: 'Recycle at local electronics recycling center.',
+    tablet: 'Recycle at local electronics recycling center.',
+    ipad: 'Recycle at local electronics recycling center.',
   },
   phone: {
-    'land line': 'Recycle at electronics recycling centers.',
-    mobile: 'Recycle at electronics recycling centers.',
-  }
+    'land line': 'Recycle at local electronics recycling center.',
+    mobile: 'Recycle at local electronics recycling center.',
+  },
+  pencil: 'Garbage.',
+  pen: 'Garbage.',
+  marker: 'Garbage.',
+  eraser: 'Garbage.',
+  'glue stick': 'Garbage.',
+  crayon: 'Garbage.',
+  highlighter: 'Garbage.',
+  'post-it note': 'Recycle.',
+  scissor: 'Garbage.',
+  'white-out': 'Garbage.',
+  staple: 'Garbage.',
+  stapler: 'Garbage.',
+  paperclip: 'Garbage.',
 };
+}
 
 function narrowDown(object) {
   obj = object;
@@ -371,5 +387,19 @@ function ignorePlural(str) {
   }
   return str;
 }
+//function for creating local storage file for dataList
+function searchStorage(){
+  if (localStorage.getItem('dataList')) {
+    dataList = JSON.parse(localStorage.getItem('dataList'));
+    console.log('dataList retrieved');
 
+  }
+  else {
+    makeDataList();
+    var dataListStringified = JSON.stringify(dataList);
+    localStorage.setItem('dataList',dataListStringified);
+    console.log('dataList in storage')
+  }
+}
+window.addEventListener('load',searchStorage);
 form.addEventListener('submit', handleSubmit);
