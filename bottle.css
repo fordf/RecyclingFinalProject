@@ -1,13 +1,13 @@
 @-webkit-keyframes bottleanimation {
   0% { margin-left: -100px; margin-top: -100px;}
   50% { margin-left: 400px; margin-top: -200px; width: 250px; height: 250px;}
-  100% { margin-left: 620px; margin-top: 100px;}
+  100% { margin-left: 580px; margin-top: 100px;}
 }
 
 @keyframes bottleanimation {
   0% { margin-left: -100px; margin-top: -100px;}
   50% { margin-left: 400px; margin-top: -200px; width: 250px; height: 250px;}
-  100% { margin-left: 620px; margin-top: 100px;}
+  100% { margin-left: 580px; margin-top: 100px;}
 }
 
 #bottle-animation {
