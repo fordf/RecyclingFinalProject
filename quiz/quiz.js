@@ -10,8 +10,9 @@ var no = document.getElementById('no');
 var table = document.getElementById('table');
 var header = document.getElementById('header');
 var allQuestions = [];
+var allQuestionsRandom = [];
 
-// var rightAnswers = ['No', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes'];
+// var rightAnswers = ['No', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes'];\
 
 var rightAnswers = [];
 var userAnswers = [];
@@ -29,34 +30,28 @@ function Question(question, rightAnswer, answer) {
   this.question = question;
   this.rightAnswer = rightAnswer;
   this.answer = answer;
-  this.shortAnswer = function () {
-    if (this.answer.toLowerCase.includes('no')) {
-      return 'No';
-    } else {
-      return 'Yes';
-    }
-  };
   allQuestions.push(this);
 }
 
 //creating new question instances
 function makingQuestions() {
-  new Question('Can you recycle used pizza boxes?', 'No, grease in the pizza box can contaminate the recycling process.');
-  new Question('Can you recycle hardcover books?', 'No, the glue in the books binding can have a negative impact on the recycling process.');
-  new Question('Can you recycle spiral bound notebooks?', 'Yes, but remove and dispose of the spiral binding in the garbage first.');
-  new Question('Do you need to know what the numbers on the plastic bottle recyclable mean?', 'No, Seattle does not recycle by number or symbol.');
-  new Question('Are shampoo/lotion bottles recyclable?', 'Yes, but they must be thoroughly rinsed.');
-  new Question('Can you recycle grocery bags?', 'Yes, but they must be bundled. Single bags can clog up the machine.');
-  new Question('Can you recycle shrink wrap?', 'Yes, but it must be clean and dry and put in a plastic bag with other plastic items.');
-  new Question('Can you recycle ammunition?', 'No, ammunition is not acceptable in garbage or household hazardous waste facilities.');
-  new Question('Can you recycle my used clothes, shoes, or household fabrics?', 'No, all items would need to go into the garbage or be donated to a secondary store.');
-  new Question('Can you recycle gift wrap?', 'Yes, provided it is paper gift wrap. Plastic, foil, or tissue paper needs to go into the garbage.');
-  new Question('Can you recycle bleach bottles?', 'Yes, but it must be cleaned and dried.');
+  new Question('Can you recycle used pizza boxes?', 'No', 'No, grease in the pizza box can contaminate the recycling process.');
+  new Question('Can you recycle hardcover books?', 'No', 'No, the glue in the books binding can have a negative impact on the recycling process.');
+  new Question('Can you recycle spiral bound notebooks?', 'Yes', 'Yes, but remove and dispose of the spiral binding in the garbage first.');
+  new Question('Do you need to know what the numbers on the plastic bottle recyclable mean?', 'No', 'No, Seattle does not recycle by number or symbol.');
+  new Question('Are shampoo/lotion bottles recyclable?', 'Yes', 'Yes, but they must be thoroughly rinsed.');
+  new Question('Can you recycle grocery bags?', 'Yes', 'Yes, but they must be bundled. Single bags can clog up the machine.');
+  new Question('Can you recycle shrink wrap?', 'Yes', 'Yes, but it must be clean and dry and put in a plastic bag with other plastic items.');
+  new Question('Can you recycle ammunition?', 'No', 'No, ammunition is not acceptable in garbage or household hazardous waste facilities.');
+  new Question('Can you recycle my used clothes, shoes, or household fabrics?', 'No', 'No, all items would need to go into the garbage or be donated to a secondary store.');
+  new Question('Can you recycle gift wrap?', 'Yes', 'Yes, provided it is paper gift wrap. Plastic, foil, or tissue paper needs to go into the garbage.');
+  new Question('Can you recycle bleach bottles?', 'Yes', 'Yes, but it must be cleaned and dried.');
 };
 
 //displays next question on page
 var createNewQuestion = function() {
   randomQuestion = Math.floor(Math.random() * allQuestions.length);
+  allQuestionsRandom.push(allQuestions[randomQuestion]);
   console.log (randomQuestion);
   var liEl = document.createElement('li');
   liEl.textContent = allQuestions[randomQuestion].question;
@@ -64,7 +59,6 @@ var createNewQuestion = function() {
   rightAnswers.push(allQuestions[randomQuestion].rightAnswer);
   allQuestions.splice(randomQuestion, 1);
 };
-createNewQuestion();
 
 //displays score
 var displayScore = function() {
@@ -97,17 +91,17 @@ var makeHeaderRow = function() {
 
 //makes table data
 function quizResults(){
-  for (var i = 0; i < allQuestions.length; i++) {
+  for (var i = 0; i < allQuestionsRandom.length; i++) {
     var tRowEl = document.createElement('tr');
     var tDataEl = document.createElement('td');
-    tDataEl.textContent = allQuestions[i].question;
+    tDataEl.textContent = allQuestionsRandom[i].question;
     tRowEl.appendChild(tDataEl);
     table.appendChild(tRowEl);
     tDataEl = document.createElement('td');
     tDataEl.textContent = userAnswers[i];
     tRowEl.appendChild(tDataEl);
     tDataEl = document.createElement('td');
-    tDataEl.textContent = allQuestions[i].answer;
+    tDataEl.textContent = allQuestionsRandom[i].answer;
     tRowEl.appendChild(tDataEl);
     table.appendChild(tRowEl);
   }
