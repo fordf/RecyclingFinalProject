@@ -57,11 +57,11 @@ var displayScore = function() {
   var heading = document.createElement('h3');
   heading.textContent = 'You scored ' + score + ' out of 10.';
   header.appendChild(heading);
+  heading = document.createElement('h5');
+  heading.textContent = 'Your previous score was ' + scoreArray[scoreArray.length - 1] + '. Take the quiz again and try to beat it.';
+  header.appendChild(heading);
   scoreArray.push(score);
   localStorage.setItem('scoreArray', JSON.stringify(scoreArray));
-  heading = document.createElement('h5');
-  heading.textContent = 'Your previous score was ' + scoreArray[0] + '. Take the quiz again and try to beat it.';
-  header.appendChild(heading);
 };
 
 //makes table header
