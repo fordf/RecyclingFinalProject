@@ -6,6 +6,7 @@ var searchStrEl = document.getElementById('searchStr');
 var searchStr = '';
 var words;
 var obj;
+var dataList; //var for localStorage function
 
 var boxes = {
   butter: 'Recycle.',
@@ -67,8 +68,9 @@ var book = {
   hardcover: 'Garbage.',
   softcover: 'Recycle.'
 };
-
-var dataList = {
+//function to wrap all objects created to localStorage
+function makeDataList(){
+dataList = {
   styrofoam: 'Anything styrofoam goes in the garbage.',
   aluminum: {
     foil: {
@@ -286,6 +288,7 @@ var dataList = {
     mobile: 'Recycle at electronics recycling centers.',
   }
 };
+}
 
 function narrowDown(object) {
   obj = object;
@@ -371,5 +374,19 @@ function ignorePlural(str) {
   }
   return str;
 }
+//function for creating local storage file for dataList
+function searchStorage(){
+  if (localStorage.getItem('dataList')) {
+    dataList = JSON.parse(localStorage.getItem('dataList'));
+    console.log('dataList retrieved');
 
+  }
+  else {
+    makeDataList();
+    var dataListStringified = JSON.stringify(dataList);
+    localStorage.setItem('dataList',dataListStringified);
+    console.log('dataList in storage')
+  }
+}
+window.addEventListener('load',searchStorage);
 form.addEventListener('submit', handleSubmit);
