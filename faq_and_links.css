@@ -37,7 +37,8 @@ header h3 {
 #listeditems a:hover{
   font-size: 20px;
   color: #1360DB;
-p{
+}
+p {
   color: #444444;
   font-size: 14px;
   font-family: 'Abhaya Libre';
