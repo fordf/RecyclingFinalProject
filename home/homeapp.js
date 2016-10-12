@@ -306,6 +306,8 @@ dataList = {
   paperclip: 'Garbage.',
 };
 }
+//get newSearchButton (by id?)
+var newSearchButton = document.getElementById('newSearchButton');
 
 function narrowDown(object) {
   obj = object;
@@ -320,7 +322,8 @@ function narrowDown(object) {
         console.log('found it: ' + obj[currentWord]);
         mainDiv.innerHTML = '';
         mainDiv.textContent = obj[currentWord];
-        animate(obj[currentWord]);
+        newSearchButton.style.display='block';
+        newSearchButton.addEventListener('click', refreshBrowser);
       } else if (typeof(obj[currentWord]) === 'object') {
         console.log('found object: ' + obj[currentWord]);
         obj = obj[currentWord];
@@ -337,7 +340,15 @@ function narrowDown(object) {
     mainDiv.innerHTML = '';
     mainDiv.textContent = 'I don\'t know how to handle ' + searchStr + '. Try describing the item by its material.';
     // console.log('not found');
+    //unhide it (change display to block)
+    newSearchButton.style.display='block';
+    //addEventListener for newSearchButton
+    newSearchButton.addEventListener('click', refreshBrowser);
   }
+}
+//function refreshButton :
+function refreshBrowser(){
+    window.location.reload();
 }
 function handleSubmit(event) {
   event.preventDefault();
@@ -364,6 +375,8 @@ function handleClick(event) {
     obj = which;
     renderButtons(obj);
   }
+  newSearchButton.style.display='block';
+  newSearchButton.addEventListener('click', refreshBrowser);
 }
 
 function renderButtons(object) {
