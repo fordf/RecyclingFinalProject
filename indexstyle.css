@@ -19,12 +19,14 @@
   position: absolute;
   display: inline-block;
   left: 110px;
+  z-index: -1;
 }
 
 .recycle {
   position: absolute;
   display: inline-block;
   margin-left: 300px;
+  z-index: -1;
 }
 
 .compost {

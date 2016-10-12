@@ -1,22 +1,22 @@
-@-webkit-keyframes animation {
+@-webkit-keyframes bottleanimation {
   0% { margin-left: -100px; margin-top: -100px;}
-  50% { margin-left: 600px; margin-top: -200px; width: 250px; height: 250px;}
-  100% { margin-left: 920px; margin-top: 100px;}
+  50% { margin-left: 400px; margin-top: -200px; width: 250px; height: 250px;}
+  100% { margin-left: 620px; margin-top: 100px;}
 }
 
-@keyframes animation {
+@keyframes bottleanimation {
   0% { margin-left: -100px; margin-top: -100px;}
-  50% { margin-left: 600px; margin-top: -200px; width: 250px; height: 250px;}
-  100% { margin-left: 920px; margin-top: 100px;}
+  50% { margin-left: 400px; margin-top: -200px; width: 250px; height: 250px;}
+  100% { margin-left: 620px; margin-top: 100px;}
 }
 
-#apple-animation {
+#bottle-animation {
   width: 100px;
   height: 150px;
   margin-left: -120px;
-  -webkit-animation-name: animation; /* Chrome, Safari, Opera */
+  -webkit-animation-name: bottleanimation; /* Chrome, Safari, Opera */
   -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
-  animation-name: animation;
+  animation-name: bottleanimation;
   animation-duration: 1s;
   animation-timing-function: linear;
   position: absolute;
