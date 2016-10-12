@@ -21,3 +21,7 @@
   animation-timing-function: linear;
   position: absolute;
 }
+
+#cat {
+  display: none;
+}
