@@ -15,9 +15,23 @@
   height: 60px;
 }
 
+.garbage {
+  position: absolute;
+  display: inline-block;
+  left: 110px;
+}
+
+.recycle {
+  position: absolute;
+  display: inline-block;
+  margin-left: 300px;
+}
+
 .compost {
   position: absolute;
   display: inline-block;
+  margin-left: 640px;
+  z-index: -1;
 }
 
 .compost h3, .recycle h3, .garbage h3 {
@@ -26,21 +40,16 @@
   font-size: 40px;
   color: #ffffff;
   position: absolute;
-  margin-left: 78px;
+  margin-left: 74px;
   margin-top: -280px;
 }
 
-.recycle {
-  position: absolute;
-  display: inline-block;
-  margin-left: 330px;
+.recycle h3 {
+  margin-left: 81px;
 }
 
-.garbage {
-  position: absolute;
-  display: inline-block;
-  margin-left: 660px;
-  z-index: -1;
+.garbage h3 {
+ margin-left: 76px;
 }
 
 form {
