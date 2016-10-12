@@ -38,3 +38,7 @@ p{
   font-size: 14px;
   font-family: 'Abhaya Libre';
 }
+
+li:hover {
+  cursor: pointer;
+}
