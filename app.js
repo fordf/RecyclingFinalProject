@@ -270,7 +270,7 @@ dataList = {
     pyrex: 'Garbage.',
   },
   pyrex: 'Garbage.',
-  glas: {
+  glass: {
     bottle: 'Recycle.',
     jar: 'Recycle.',
     ceramic: 'Garbage.',
