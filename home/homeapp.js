@@ -326,6 +326,7 @@ function narrowDown(object) {
         mainDiv.textContent = obj[currentWord];
         newSearchButton.style.display='block';
         newSearchButton.addEventListener('click', refreshBrowser);
+        animate(obj[currentWord]);
       } else if (typeof(obj[currentWord]) === 'object') {
         console.log('found object: ' + obj[currentWord]);
         obj = obj[currentWord];
