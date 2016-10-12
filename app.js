@@ -244,6 +244,7 @@ var dataList = {
     cartridge: 'Follow manufacturer\'s recycling instruction. Otheriwse, Garbage.',
   },
   money: 'Disposing national currency is illegal. Can be fined or imprisoned. Title 18, Chapter 17 of the U.S. Code.',
+  tampon: 'Garbage.',
   condom: {
     used: 'Garbage.',
     unused: 'Maybe it\'s time to get busy instead of wondering about where your trash goes.',
