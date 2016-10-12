@@ -7,6 +7,9 @@ var searchStr = '';
 var words;
 var obj;
 var dataList; //var for localStorage function
+var appleEl = document.getElementById('apple');
+var bottleEl = document.getElementById('bottle');
+var catEl = document.getElementById('cat');
 
 var boxes = {
   butter: 'Recycle.',
@@ -49,6 +52,7 @@ var container = {
   detergent: cleanAndRecycle,
   bleach: cleanAndRecycle,
   pesticide: 'Garbage.',
+  feces: 'Down the drain! Or a bag I guess?',
   'motor oil': 'Garbage',
   'hazardous': 'Garbage.',
   glass: cleanAndRecycle,
@@ -366,6 +370,7 @@ function handleClick(event) {
   if (typeof(which) === 'string'){
     mainDiv.innerHTML = '';
     mainDiv.textContent = which;
+    animate(which);
   } else {
     obj = which;
     renderButtons(obj);
@@ -401,6 +406,24 @@ function ignorePlural(str) {
   }
   return str;
 }
+
+function animate(answerStr) {
+  console.log(answerStr);
+  console.log(answerStr.toLowerCase().includes('compost'));
+  if (answerStr.toLowerCase().includes('recycle')) {
+    //animate bottle
+    bottleEl.id += '-animation';
+  }
+  if (answerStr.toLowerCase().includes('compost')) {
+    //animate apple
+    appleEl.id += '-animation';
+  }
+  if (answerStr.toLowerCase().includes('garbage')) {
+    //animate cat
+    catEl.id += '-animation';
+  }
+}
+
 //function for creating local storage file for dataList
 function searchStorage(){
   if (localStorage.getItem('dataList')) {
@@ -415,5 +438,6 @@ function searchStorage(){
     console.log('dataList in storage')
   }
 }
+
 window.addEventListener('load',searchStorage);
 form.addEventListener('submit', handleSubmit);
