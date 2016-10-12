@@ -24,6 +24,8 @@ nav ul {
 nav img {
   float:left;
   margin-left: 20px;
+  width: 200px;
+  height: 64px;
   }
 
 nav li {
