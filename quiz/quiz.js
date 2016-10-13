@@ -106,6 +106,9 @@ function quizResults(){
     tDataEl = document.createElement('td');
     tDataEl.textContent = userAnswers[i];
     tRowEl.appendChild(tDataEl);
+    if (userAnswers[i] !== rightAnswers[i]) {
+      tDataEl.setAttribute('class', 'incorrect');
+    }
     tDataEl = document.createElement('td');
     tDataEl.textContent = allQuestionsRandom[i].answer;
     tRowEl.appendChild(tDataEl);
