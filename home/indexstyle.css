@@ -72,10 +72,6 @@ form {
   font-size: 150%;
   font-weight: bold;
   min-height: 100px;
-  /*display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  flex*/
 }
 
 button {
