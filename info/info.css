@@ -1,6 +1,6 @@
 header {
   margin-top: 50px;
-  font-family: 'Abhaya Libre', 'Poiret One', cursive;
+  font-family: 'Poiret One', cursive;
   font-size: 50px;
   color: #1360DB;
 }
@@ -14,16 +14,16 @@ header h3 {
   text-decoration: underline;
 }
 #listeditems{
-  max-width: 960px;
   margin: 0 auto;
   position: relative;
 }
 #categories{
   position: absolute;
-  font-family: 'Abhaya Libre';
-  font-size: 22px;
+  font-family: 'Work Sans';
+  font-size: 20px;
   margin-left: 30px;
   list-style: none;
+  width: 87%;
 }
 #subcategories{
   color: #1360DB;
@@ -44,13 +44,14 @@ header h3 {
 p {
   color: #444444;
   font-size: 14px;
-  font-family: 'Abhaya Libre';
+  font-family: 'Work Sans';
 }
 
 .mainlis {
   transition: 200ms all;
   cursor: pointer;
   position: relative;
+  border-top: 1px solid #ddddff;
 }
 
 .mainlis:hover, .big {
@@ -58,4 +59,10 @@ p {
   transition: 200ms all;
   cursor: pointer;
   font-size: 1.05em;
+  border-top: 1px solid #ddddff;
+}
+
+#categories li {
+  padding: 4px;
+  padding-left: 100px;
 }
