@@ -46,6 +46,10 @@ function makingQuestions() {
   new Question('Can you recycle my used clothes, shoes, or household fabrics?', 'No', 'No, all items would need to go into the garbage or be donated to a secondary store.');
   new Question('Can you recycle gift wrap?', 'Yes', 'Yes, provided it is paper gift wrap. Plastic, foil, or tissue paper needs to go into the garbage.');
   new Question('Can you recycle bleach bottles?', 'Yes', 'Yes, but it must be cleaned and dried.');
+  new Question('Can you recycle Pyrex containers?', 'No', 'No, it has been specially treated in the manufacturing process to withstand high temperatures, which makes it non-recyclable.');
+  new Question('Can bubble wrap be recycled?', 'Yes', 'Yes, bundle it togethere in a plastic grocery bag.');
+  new Question('Can you recycle styrofoam peanuts and styrofoam blocks?', 'No', 'No, you cannot recycle styrofoam, it belongs in the garbage.');
+  new Question('Can you put icecream cartons in compost?', 'No', 'No, if they have been rinced they my be recycled.');
 };
 
 //displays next question on page
