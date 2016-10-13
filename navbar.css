@@ -31,20 +31,21 @@ nav img {
 
 nav li {
   width: 25%;
-  min-width: 240px;
+  min-width: 239px;
   padding-top: 14px;
   padding-bottom: 11px;
-  color: #73BE43;
+  color: #439E33;
   font-family: 'Poiret One', cursive;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
+  border-left: 1px solid #cccccc;
 }
 
 nav a {
   text-decoration: none;
-  color: #53A021;
-  transition: 400ms all;
+  color: #497E33;
+  transition: 300ms all;
 }
 
 nav a:hover {
