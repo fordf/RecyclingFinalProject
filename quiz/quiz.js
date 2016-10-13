@@ -45,6 +45,8 @@ function makingQuestions() {
   new Question('Can you recycle ammunition?', 'No', 'No, ammunition is not acceptable in garbage or household hazardous waste facilities.');
   new Question('Can you recycle my used clothes, shoes, or household fabrics?', 'No', 'No, all items would need to go into the garbage or be donated to a secondary store.');
   new Question('Can you recycle gift wrap?', 'Yes', 'Yes, provided it is paper gift wrap. Plastic, foil, or tissue paper needs to go into the garbage.');
+  new Question('Can alkaline batteries be thrown in the garbage?','Yes', 'Yes, but they can be recycled at Household Hazardous Waste (HHW) facilities.');
+  new Question('Are motor oil containers recyclable?', 'No', 'No, they go in the garbage.');
   new Question('Can you recycle bleach bottles?', 'Yes', 'Yes, but it must be cleaned and dried.');
 };
 

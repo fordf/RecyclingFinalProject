@@ -120,7 +120,8 @@ input {
 #searchStr {
   vertical-align: middle;
   max-width: 400px;
-  margin: 30px auto;
+  margin: 10px auto;
+  margin-top: 0;
   text-align: center;
   font-family: 'Poiret One';
 }
