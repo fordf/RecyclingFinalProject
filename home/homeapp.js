@@ -369,6 +369,7 @@ function handleSubmit(event) {
 }
 
 function handleClick(event) {
+  console.log('which witch is which?');
   // console.log(event.target.textContent);
   var which = obj[event.target.textContent];
   searchStr = event.target.textContent + ' ' + searchStr;
@@ -378,12 +379,12 @@ function handleClick(event) {
     mainDiv.innerHTML = '';
     mainDiv.textContent = which;
     animate(which);
+    newSearchButton.style.display = 'block';
+    newSearchButton.addEventListener('click', refreshBrowser);
   } else {
     obj = which;
     renderButtons(obj);
   }
-  newSearchButton.style.display='block';
-  newSearchButton.addEventListener('click', refreshBrowser);
 }
 
 function renderButtons(object) {
