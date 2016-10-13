@@ -419,6 +419,7 @@ function narrowDown(object) {
         mainDiv.innerHTML = '';
         mainDiv.textContent = obj[currentWord];
         newSearchButton.style.display='block';
+        newSearchButton.style.position='absolute';
         newSearchButton.addEventListener('click', refreshBrowser);
         animate(obj[currentWord]);
       } else if (typeof(obj[currentWord]) === 'object') {
@@ -503,7 +504,7 @@ function removeDash(str) {
 }
 
 function ignorePlural(str) {
-  if (str[str.length - 1] === 's' && str[str.length - 2]) {
+  if (str[str.length - 1] === 's' && str[str.length - 2] !== 's') {
     console.log('plural');
     return str.substring(0, str.length - 1);
   }

@@ -71,6 +71,7 @@ table {
   max-width: 960px;
   margin: 0 auto;
   margin-top: -220px;
+  border-collapse: collapse;
 }
 
 table td {
