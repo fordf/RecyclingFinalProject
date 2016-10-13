@@ -76,15 +76,20 @@ form {
 
 button {
   display: inline-block;
-  font-family: 'Abhaya Libre';
+  font-family: 'Poiret One';
   font-size: 16px;
-  width: 120px;
-  height: 78px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #ffc879;
+  width: auto;
+  height: auto;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 3px outset gray;
 }
 
 button:hover {
-  border: 1px outset orange;
+  border: 3px outset orange;
   z-index: 10;
 }
 
@@ -117,6 +122,13 @@ input {
 
 .hidden {
    display: none;
+   font-family: 'Poiret One';
+   font-weight: bold;
+   width: auto;
+   height: auto;
+   margin-left: 575px;
+   border-radius: 4px;
+   border: 3px outset gray;
  }
 
 #searchStr {
