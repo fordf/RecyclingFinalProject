@@ -437,7 +437,7 @@ function narrowDown(object) {
     renderButtons(obj);
   } else if (!found) {
     mainDiv.innerHTML = '';
-    mainDiv.textContent = 'I don\'t know how to handle ' + searchStr + '. Try describing the item by its material.';
+    mainDiv.textContent = 'I don\'t know how to handle ' + searchStr + '. Try describing the item by its material or visit our information page for miscellaneous items.';
     // console.log('not found');
     //unhide it (change display to block)
     newSearchButton.style.display='block';
