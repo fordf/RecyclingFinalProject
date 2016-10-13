@@ -86,3 +86,8 @@ table th {
   border: 2px solid #000000;
   color: #1360DB;
 }
+
+.incorrect {
+  color: white;
+  background-color: #e62e00;
+}

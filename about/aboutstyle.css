@@ -4,12 +4,11 @@ header {
   font-size: 50px;
   padding: 10px 0px 10px 200px;
   color: #1360DB;
-  width: 100%;
   background-color: #dcdcdc;
   text-shadow: -3px 3px white;
 }
 
-#aboutimages img {
+.aboutimages img {
   border-radius: 90%;
   margin-left: 30px;
   margin-top: 60px;
@@ -17,7 +16,7 @@ header {
   width: 300px;
 }
 
-#aboutimages p {
+.aboutimages p {
   position: absolute;
   margin-top: -250px;
   margin-left: 400px;
@@ -26,16 +25,32 @@ header {
   color: #444444;
 }
 
-#aboutimages .item {
+.aboutimages .item {
   position: absolute;
   margin-top: -100px;
 }
 
-#aboutimages h3 {
+.aboutimages h3 {
   font-family: 'Poiret One';
   font-weight: bold;
   position: absolute;
   margin-top: 70px;
   margin-left: 400px;
   font-size: 22px;
+}
+
+.linkedin img {
+  width: 50px;
+  height: 50px;
+  margin-top: -70px;
+  margin-left: 32%;
+  position: absolute;
+}
+
+.github img {
+  width: 45px;
+  height: 45px;
+  margin-top: -67px;
+  margin-left: 37%;
+  position: absolute;
 }
