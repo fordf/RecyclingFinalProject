@@ -76,8 +76,8 @@ var boxes = {
 };
 
 var medicineBottle = {
-    'Non-prescription': 'Pill bottles such as aspirin or vitamin bottles are recyclable. Avoid putting leftover pills in the garbage or down the drain.',
-    prescription: 'Translucent prescription medicine vials go in the garbage. Avoid putting leftover pills in the garbage or down the drain.'
+    'Non-prescription': 'Pill bottles such as aspirin or vitamin bottles are recyclable. Avoid putting leftover pills in the trash or down the drain.',
+    prescription: 'Translucent prescription medicine vials go in the garbage. Avoid putting leftover pills in the trash or down the drain.'
 }
 
 var cleanAndRecycle = 'Clean, dry, and recycle.';
@@ -163,10 +163,10 @@ function makeDataList(){
     newspaper: 'Recycle.',
     notebook: 'Throw any spiral in garbage, Recycle paper.',
     cardboard: {
-      greasy: 'Compost (Food & Yard Waste cart), can\'t be recycled.',
-      waxed: 'Compost (Food & Yard Waste cart), can\'t be recycled.',
+      greasy: 'Compost.',
+      waxed: 'Compost.',
       corrugated: 'Recycle.',
-      wet: 'Compost (Food & Yard Waste cart).',
+      wet: 'Compost.',
       foamcore: 'Garbage'
     },
     clipping: {
@@ -188,8 +188,8 @@ function makeDataList(){
     },
     light: light,
     lightbulb: light,
-    pill: 'Dispose of pills with TakeBackYourMeds.org. Do not put in garbage or down the drain unless no other option exists.',
-    medicine: 'Dispose of medicine with TakeBackYourMeds.org. Do not put in garbage or down the drain unless no other option exists.',
+    pill: 'Dispose of pills with TakeBackYourMeds.org. Do not put in trash or down the drain unless no other option exists.',
+    medicine: 'Dispose of medicine with TakeBackYourMeds.org. Do not put in trash or down the drain unless no other option exists.',
     antifreeze: 'Take used antifreeze to the HHW locations for recycling or ask your local auto shop to recycle it for you. Do not pour out.',
     bag: {
       paper: {
@@ -228,7 +228,8 @@ function makeDataList(){
     cup: {
       paper: paper,
       plastic: plastic,
-      glass: glass
+      glass: 'Recycle.',
+      ceramic: 'Garbage.'
     },
     can: {
       beverage: 'Recycle.',
@@ -295,12 +296,10 @@ function makeDataList(){
     },
     pyrex: 'Garbage.',
     glass: glass,
-    computer: {
-      laptop: 'Recycle at local electronics recycling center.',
-      desktop: 'Recycle at local electronics recycling center.',
-      tablet: 'Recycle at local electronics recycling center.',
-      ipad: 'Recycle at local electronics recycling center.',
-    },
+    computer: 'Recycle at local electronics recycling center.',
+    laptop: 'Recycle at local electronics recycling center.',
+    tablet: 'Recycle at local electronics recycling center.',
+    ipad: 'Recycle at local electronics recycling center.',
     phone: {
       'land line': 'Recycle at local electronics recycling center.',
       mobile: 'Recycle at local electronics recycling center.',
@@ -310,12 +309,12 @@ function makeDataList(){
     pen: 'Garbage.',
     marker: 'Garbage.',
     eraser: 'Garbage.',
-    'glue stick': 'Garbage.',
+    glue: 'Garbage.',
     crayon: 'Garbage.',
     highlighter: 'Garbage.',
-    'post-it note': 'Recycle.',
+    postit: 'Recycle.',
     scissor: 'Garbage.',
-    'white-out': 'Garbage.',
+    whiteout: 'Garbage.',
     staple: 'Garbage.',
     stapler: 'Garbage.',
     paperclip: 'Garbage.',
@@ -424,7 +423,7 @@ function makeDataList(){
 var newSearchButton = document.getElementById('newSearchButton');
 
 // searches for user's input in the dataList
-function narrowDown(object) {
+function narrowDown(object, buttons) {
   obj = object;
   var found = false;
   var i = words.length - 1;
@@ -450,9 +449,12 @@ function narrowDown(object) {
       i--;
     }
   }
-  // if it doesn't reach an answer but wasn't totally stumped it gives the user buttons.
   searchStrEl.textContent = 'Current search: ' + searchStr;
-  if (!found && obj !== dataList){
+  if (buttons){
+    return found;
+  }
+  // if it doesn't reach an answer but wasn't totally stumped it gives the user buttons.
+  else if (!found && obj !== dataList){
     renderButtons(obj);
   } else if (!found) {
     mainDiv.innerHTML = '';
@@ -479,11 +481,10 @@ function handleSubmit(event) {
   searchStr = itemString;
   words = itemString.split(' ');
   // console.log(words);
-  narrowDown(dataList);
+  narrowDown(dataList, false);
 }
 
 function handleClick(event) {
-  console.log('which witch is which?');
   // console.log(event.target.textContent);
   var which = obj[event.target.textContent];
   searchStr = event.target.textContent + ' ' + searchStr;
@@ -495,7 +496,7 @@ function handleClick(event) {
     animate(which);
     newSearchButton.style.display = 'block';
     newSearchButton.addEventListener('click', refreshBrowser);
-  } else {
+  } else if (!narrowDown(which, true)){
     obj = which;
     renderButtons(obj);
   }
@@ -503,6 +504,7 @@ function handleClick(event) {
 
 function renderButtons(object) {
   mainDiv.innerHTML = '';
+  console.log(object);
   for (var i in object) {
     var buttonEl = document.createElement('button');
     buttonEl.addEventListener('click', handleClick);
