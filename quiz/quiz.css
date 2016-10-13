@@ -20,14 +20,15 @@ section {
   list-style: none;
   font-size: 30px;
   max-width: 600px;
-  margin-left: 180px;
+  margin-left: 120px;
+  text-align: center;
 }
 
 #buttons {
-  margin-left: 340px;
-  margin-top: 130px;
-  display: inline-block;
-  position: absolute;
+  margin-left: 39%;
+  margin-top: -50px;
+  width: 100px;
+  position: fixed;
 }
 
 #yes-button {
@@ -38,7 +39,7 @@ section {
   background-color: #FF7100;
   padding: 20px 40px;
   transition: 400ms all;
-  position: absolute;
+  position: fixed;
   display: inline-block;
   border-radius: 3px;
   border-bottom: 3px solid #A04700;
@@ -56,7 +57,7 @@ section {
   background-color: #FF7100;
   padding: 20px 41px;
   transition: 400ms all;
-  position: absolute;
+  position: fixed;
   display: inline-block;
   margin-left: 120px;
   border-radius: 3px;
@@ -72,6 +73,7 @@ table {
   margin: 0 auto;
   margin-top: -220px;
   border-collapse: collapse;
+  margin-bottom: 30px;
 }
 
 table td {
