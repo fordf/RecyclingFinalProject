@@ -43,15 +43,15 @@ function makingQuestions() {
   new Question('Can you recycle grocery bags?', 'Yes', 'Yes, but they must be bundled. Single bags can clog up the machine.');
   new Question('Can you recycle shrink wrap?', 'Yes', 'Yes, but it must be clean and dry and put in a plastic bag with other plastic items.');
   new Question('Can you recycle ammunition?', 'No', 'No, ammunition is not acceptable in garbage or household hazardous waste facilities.');
-  new Question('Can you recycle my used clothes, shoes, or household fabrics?', 'No', 'No, all items would need to go into the garbage or be donated to a secondary store.');
+  new Question('Can you recycle used clothes, shoes, or household fabrics?', 'No', 'No, all items would need to go into the garbage or be donated to a secondary store.');
   new Question('Can you recycle gift wrap?', 'Yes', 'Yes, provided it is paper gift wrap. Plastic, foil, or tissue paper needs to go into the garbage.');
   new Question('Can alkaline batteries be thrown in the garbage?','Yes', 'Yes, but they can be recycled at Household Hazardous Waste (HHW) facilities.');
   new Question('Are motor oil containers recyclable?', 'No', 'No, they go in the garbage.');
   new Question('Can you recycle bleach bottles?', 'Yes', 'Yes, but it must be cleaned and dried.');
   new Question('Can you recycle Pyrex containers?', 'No', 'No, it has been specially treated in the manufacturing process to withstand high temperatures, which makes it non-recyclable.');
-  new Question('Can bubble wrap be recycled?', 'Yes', 'Yes, bundle it togethere in a plastic grocery bag.');
+  new Question('Can bubble wrap be recycled?', 'Yes', 'Yes, bundle it together in a plastic grocery bag.');
   new Question('Can you recycle styrofoam peanuts and styrofoam blocks?', 'No', 'No, you cannot recycle styrofoam, it belongs in the garbage.');
-  new Question('Can you put icecream cartons in compost?', 'No', 'No, if they have been rinced they my be recycled.');
+  new Question('Can you put icecream cartons in compost?', 'No', 'No, if they have been rinsed they may be recycled.');
 };
 
 //displays next question on page
