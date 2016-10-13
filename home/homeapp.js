@@ -419,7 +419,7 @@ function narrowDown(object) {
         mainDiv.innerHTML = '';
         mainDiv.textContent = obj[currentWord];
         newSearchButton.style.display='block';
-        newSearchButton.style.position='absolute';
+        // newSearchButton.style.position='absolute';
         newSearchButton.addEventListener('click', refreshBrowser);
         animate(obj[currentWord]);
       } else if (typeof(obj[currentWord]) === 'object') {
@@ -432,7 +432,7 @@ function narrowDown(object) {
     }
   }
   // if it doesn't reach an answer but wasn't totally stumped it gives the user buttons.
-  searchStrEl.textContent = 'Search for: ' + searchStr;
+  searchStrEl.textContent = 'Current search: ' + searchStr;
   if (!found && obj !== dataList){
     renderButtons(obj);
   } else if (!found) {
@@ -468,7 +468,7 @@ function handleClick(event) {
   // console.log(event.target.textContent);
   var which = obj[event.target.textContent];
   searchStr = event.target.textContent + ' ' + searchStr;
-  searchStrEl.textContent = 'Search for: ' + searchStr;
+  searchStrEl.textContent = 'Current search: ' + searchStr;
   // console.log(which);
   if (typeof(which) === 'string'){
     mainDiv.innerHTML = '';

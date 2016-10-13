@@ -71,7 +71,11 @@ form {
   font-family: 'Poiret One';
   font-size: 150%;
   font-weight: bold;
-  height: 150px;
+  min-height: 100px;
+  /*display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex*/
 }
 
 button {
@@ -80,12 +84,11 @@ button {
   font-size: 16px;
   padding: 10px 20px;
   background-color: #ffc879;
-  width: auto;
-  height: auto;
-  margin-left: 30px;
+  margin: 0 15px;
   margin-bottom: 10px;
   border-radius: 4px;
   border: 3px outset gray;
+  transition: 200ms all;
 }
 
 button:hover {
@@ -126,7 +129,8 @@ input {
    font-weight: bold;
    width: auto;
    height: auto;
-   margin-left: 575px;
+   /*margin-left: 575px;*/
+   margin: 0 auto;
    border-radius: 4px;
    border: 3px outset gray;
  }
