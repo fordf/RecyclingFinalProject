@@ -11,6 +11,49 @@ var appleEl = document.getElementById('apple');
 var bottleEl = document.getElementById('bottle');
 var catEl = document.getElementById('cat');
 
+
+var paper = {
+  cup: {
+    'plastic-coated': 'Recycle. Garbage if dirty. Unless cup says it\'s compostable.',
+    uncoated: 'Compost.'
+  },
+  plate: {
+    'plastic-coated': 'Recycle if clean. Garbage if dirty. Unless plate says it\'s compostable.',
+    uncoated: 'Compost.'
+  },
+  towel: {
+    unused: 'Recycle',
+    'food-soiled': 'Compost.',
+    'chemical/body-fluid soiled': 'Garbage. Bagged preferably.',
+  },
+  office: 'Recycle.',
+  printer: 'Recycle.',
+  shredded: 'Compost or garbage.',
+  waxed: 'Compost bin.',
+  'punch holes': 'Compost or garbage.',
+  bag: {
+    clean: 'Recycle.',
+    dirty: 'Compost.'
+  }
+};
+
+var plastic = {
+  utensil: 'Garbage, unless marked compostable.',
+  cup: 'Clean and recycle.',
+  bottle: container,
+  'blister packaging (really hard to open stuff)': 'Garbage.',
+  '6-pack rings': 'Snip apart, bag, and place in garbage.',
+  'berry tray': 'Clean and recycle.'
+};
+
+var glass = {
+  bottle: 'Recycle.',
+  jar: 'Recycle.',
+  ceramic: 'Garbage.',
+  eye: 'Garbage.',
+  broken: 'Recycle (large pieces). Garbage (shards).',
+};
+
 var boxes = {
   butter: 'Recycle.',
   cereal: 'Recycle. Liners go in garbage.',
@@ -37,27 +80,23 @@ var medicineBottle = {
     prescription: 'Translucent prescription medicine vials go in the garbage. Avoid putting leftover pills in the garbage or down the drain.'
 }
 
-var plastic = {
-  'blister packaging (really hard to open stuff)': 'Garbage.',
-  '6-pack rings': 'Snip apart, bag, and place in garbage.',
-  'berry tray': 'Clean and recycle.',
-  utensil: 'Garbage, unless marked compostable.',
-  cup: 'Clean and recycle.',
-};
-
 var cleanAndRecycle = 'Clean, dry, and recycle.';
+
 var container = {
   soda: cleanAndRecycle,
   water: cleanAndRecycle,
   detergent: cleanAndRecycle,
   bleach: cleanAndRecycle,
   pesticide: 'Garbage.',
-  feces: 'Down the drain! Or a bag I guess?',
   'motor oil': 'Garbage',
   'hazardous': 'Garbage.',
-  glass: cleanAndRecycle,
   pill: medicineBottle,
   medicine: medicineBottle
+};
+
+var containerWithGlass = {
+  glass : 'Recycle',
+  plastic: container
 };
 
 var light = {
@@ -87,12 +126,6 @@ function makeDataList(){
       beer: 'Garbage',
       plastic: 'Screw onto empty plastic bottle and recycle. Garbage without bottle.'
     },
-    // bottle: {
-    //   plastic: 'Ignore the numbers, you can recycle all plastic food containers: bottles, dairy tubs, jugs, and jars.',
-    //   glass: 'Clean and recycle.',
-    //   'shampoo/lotion': 'Clean and recycle.'
-    // },
-
     bucket: 'Reuse if possible. If it contained hazardous waste, it goes in the garbage. Otherwise, recycle.',
     kleenex: 'Garbage.',
     tissue: 'Garbage.',
@@ -143,6 +176,10 @@ function makeDataList(){
     grass: 'Compost.',
     box: boxes,
     boxe: boxes,
+    pouch: {
+      juice: 'Garbage.'
+    },
+    bottle: containerWithGlass,
     carton: boxes,
     napkin: {
       unused: 'Recycle.',
@@ -180,35 +217,18 @@ function makeDataList(){
     },
     tarp: 'Garbage.',
     toy: 'Recycle metal or rigid plastic toys that are 3 feet or smaller on all sides. Items that are not all metal or all plastic go in the garbage.',
-    bottle: container,
-    jar: container,
+    // bottle: container,
+    jar: containerWithGlass,
     jug: container,
     tub: container,
     vial: container,
     container: container,
-    plastic: {
-      cup: 'Clean and recycle',
-      utensil: 'Garbage, unless marked compostable.',
-    },
-    paper: {
-      cup: {
-        'plastic-coated': 'Recycle. Garbage if dirty. Unless cup says it\'s compostable.',
-        uncoated: 'Compost.'
-      },
-      plate: {
-        'plastic-coated': 'Recycle if clean. Garbage if dirty. Unless plate says it\'s compostable.',
-        uncoated: 'Compost.'
-      },
-      towel: {
-        unused: 'Recycle',
-        'food-soiled': 'Compost.',
-        'chemical/body-fluid soiled': 'Garbage. Bagged preferably.',
-      },
-      office: 'Recycle.',
-      printer: 'Recycle.',
-      shredded: 'Compost or garbage.',
-      waxed: 'Compost bin.',
-      'punch holes': 'Compost or garbage.'
+    plastic: plastic,
+    paper: paper,
+    cup: {
+      paper: paper,
+      plastic: plastic,
+      glass: glass
     },
     can: {
       beverage: 'Recycle.',
@@ -274,13 +294,7 @@ function makeDataList(){
       pyrex: 'Garbage.',
     },
     pyrex: 'Garbage.',
-    glass: {
-      bottle: 'Recycle.',
-      jar: 'Recycle.',
-      ceramic: 'Garbage.',
-      eye: 'Garbage.',
-      broken: 'Recycle (large pieces). Garbage (shards).',
-    },
+    glass: glass,
     computer: {
       laptop: 'Recycle at local electronics recycling center.',
       desktop: 'Recycle at local electronics recycling center.',
@@ -330,10 +344,14 @@ function makeDataList(){
     shell: 'Compost.',
     alfalfa: 'Compost.',
     rye: 'Compost.',
+    coffee: {
+      ground: 'Compost.',
+      coffee: 'Compost.'
+    },
     grapefruit: 'Compost.',
     pasta: 'Compost.',
     grape: 'Compost.',
-    corncob: 'Compost.',
+    corn: 'Compost.',
     jello: 'Compost.',
     gelatin: 'Compost.',
     beet: 'Compost.',
@@ -359,6 +377,7 @@ function makeDataList(){
     },
     egg: 'Compost.',
     guano: 'Compost.',
+    poop: 'Toilet preferably.',
     apple: 'Compost.',
     banana: 'Compost.',
     yogurt: 'Compost.',
@@ -533,13 +552,12 @@ function searchStorage(){
   if (localStorage.getItem('dataList')) {
     dataList = JSON.parse(localStorage.getItem('dataList'));
     console.log('dataList retrieved');
-
   }
   else {
     makeDataList();
     var dataListStringified = JSON.stringify(dataList);
     localStorage.setItem('dataList',dataListStringified);
-    console.log('dataList in storage')
+    console.log('dataList created');
   }
 }
 

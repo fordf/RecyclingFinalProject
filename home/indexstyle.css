@@ -138,4 +138,5 @@ input {
   margin-top: 0;
   text-align: center;
   font-family: 'Poiret One';
+  text-shadow: -1px 0 #EEEEEE, 0 1px #EEEEEE, 1px 0 #EEEEEE, 0 -1px #EEEEEE;
 }
