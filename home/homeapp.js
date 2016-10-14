@@ -458,7 +458,7 @@ function narrowDown(object, buttons) {
     renderButtons(obj);
   } else if (!found) {
     mainDiv.innerHTML = '';
-    mainDiv.textContent = 'Input ' + searchStr + ' not an accepted term. Describe item by its material or visit the information page for miscellaneous items.';
+    mainDiv.textContent = searchStr + ' is not an accepted term. Describe the item by its material or visit the information page for miscellaneous items.';
     // console.log('not found');
     //unhide it (change display to block)
     newSearchButton.style.display='block';
