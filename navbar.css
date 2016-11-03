@@ -8,7 +8,6 @@ nav {
   padding: 0px;
   /*width: 100%;*/
   max-width: 1000px;
-  float:right;
 }
 
 nav ul {
@@ -16,11 +15,18 @@ nav ul {
   margin-right: 23px;
   padding: 0;
   display: fixed;
+  float: right;
+}
+
+nav ul, nav li {
+
+  /*padding:0px;
+  margin:0px;*/
 }
 
 nav img {
   float:left;
-  margin-left: 30px;
+  margin-left: 16px;
   width: 236px;
   margin-top: -10px;
 }
@@ -48,7 +54,7 @@ nav ul:hover {
 }
 
 nav li {
-  float: left;
+  float: right;
   display: none;
   /*width: 20vw;*/
   /*height: 60px;*/
@@ -75,18 +81,18 @@ nav a {
   transition: 300ms all;
 }
 
-/*nav a:hover {
-  font-size: 23px;
+nav a:hover {
+  font-size: 110%;
   color: #1360DB;
-}*/
+}
 
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 596px) {
   .typcn-info {
     display: none;
   }
   nav ul, nav ul:hover {
-    margin-left: 10px;
-    margin-right: 3vw;
+    /*margin-left: 10px;*/
+    margin-right: 8px;
     width: 50vw;
   }
 
@@ -96,13 +102,14 @@ nav a {
   }
 
   nav li {
+    float:left;
     display: inline-block;;
     width: 30%;
     height: 60px;
     color: #439E33;
     font-family: 'Poiret One', cursive;
     font-size: 3vw;
-    border-right: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
   }
 
   nav li:first-of-type {
@@ -110,17 +117,27 @@ nav a {
   }
 
   nav img {
-    margin-left:
+    margin-left: 20px;
+    margin-top: -8px;
   }
-  nav a:hover {
-    font-size: 120%;
-    color: #1360DB;
+
+  #main {
+    margin-top: 30px;
   }
 }
 
-@media screen and (min-width=760px) {
-  nav ul {
+@media screen and (min-width: 860px) {
+  nav ul, nav ul:hover {
     /*margin-left: 10px;*/
-    width: 65vw;
+    width: 480px;
+    margin-right: 30px;
+  }
+
+  nav li {
+    font-size: 30px;
+  }
+  nav img {
+    margin-left: 30px;
+    margin-top: -4px;
   }
 }
