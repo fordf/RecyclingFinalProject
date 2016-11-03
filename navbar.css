@@ -3,51 +3,70 @@ body {
 }
 
 nav {
-  height: 60px;
+  height: 100px;
   margin: 20px auto;
   padding: 0px;
-  width: 100%;
-}
-
-nav ul, nav li {
-  display: inline-block;
+  /*width: 100%;*/
+  max-width: 1000px;
   float:right;
-  padding:0px;
-  margin:0px;
 }
 
 nav ul {
-  margin-left: 10px;
+  margin-top: 9px;
+  margin-right: 23px;
+  padding: 0;
+  display: fixed;
 }
 
 nav img {
   float:left;
-  margin-left: 20px;
-  width: 200px;
-  height: 64px;
+  margin-left: 30px;
+  width: 236px;
   margin-top: -10px;
 }
 
 #logo-container {
+  display: inline-block;
+  width: 30vw;
+  min-width: 224px;
+  height: 100%;
+}
 
+.typcn-info:hover {
+  display: none;
+}
+nav ul:hover .typcn-info{
+  display: none;
+}
+
+nav ul:hover li {
+  display: block;
+}
+
+nav ul:hover {
+  width: 120px;
 }
 
 nav li {
-  width: 20vw;
-  min-height: 38px;
-  padding-top: 13px;
-  padding-bottom: 13px;
+  float: left;
+  display: none;
+  /*width: 20vw;*/
+  /*height: 60px;*/
+  padding: 0;
+  height: 45px;
   color: #439E33;
   font-family: 'Poiret One', cursive;
-  font-size: 3vw;
+  font-size: 22px;
   font-weight: bold;
   text-align: center;
-  border-left: 1px solid #cccccc;
+  /*border-left: 1px solid #cccccc;*/
 }
 
 nav li a {
-  display: inline-block;
-  vertical-align: middle;
+  display: block;
+  margin: 0;
+  z-index: 20;
+  background-color: white;
 }
 
 nav a {
@@ -56,7 +75,52 @@ nav a {
   transition: 300ms all;
 }
 
-nav a:hover {
-  font-size: 4vw;
+/*nav a:hover {
+  font-size: 23px;
   color: #1360DB;
+}*/
+
+@media screen and (min-width: 560px) {
+  .typcn-info {
+    display: none;
+  }
+  nav ul, nav ul:hover {
+    margin-left: 10px;
+    margin-right: 3vw;
+    width: 50vw;
+  }
+
+  nav li a {
+    display: inline-block;
+    margin: 13px 0;
+  }
+
+  nav li {
+    display: inline-block;;
+    width: 30%;
+    height: 60px;
+    color: #439E33;
+    font-family: 'Poiret One', cursive;
+    font-size: 3vw;
+    border-right: 1px solid #cccccc;
+  }
+
+  nav li:first-of-type {
+    width: 39%;
+  }
+
+  nav img {
+    margin-left:
+  }
+  nav a:hover {
+    font-size: 120%;
+    color: #1360DB;
+  }
+}
+
+@media screen and (min-width=760px) {
+  nav ul {
+    /*margin-left: 10px;*/
+    width: 65vw;
+  }
 }
