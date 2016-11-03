@@ -4,6 +4,7 @@
     <title>Which Bin?</title>
     <link rel="stylesheet" href="navbar.css"></link>
     <link rel="stylesheet" href="home/indexstyle.css"></link>
+    <link rel="stylesheet" href="typicons.font/src/font/typicons.css">
     <link rel="stylesheet" href="home/apple.css"></link> <!-- animation -->
     <link rel="stylesheet" href="home/bottle.css"></link> <!-- animation -->
     <link rel="stylesheet" href="home/cat.css"></link> <!-- animation -->
@@ -11,7 +12,7 @@
   </head>
   <body>
     <nav>
-      <a href="index.html"><img id="navimg" src="images/logosmall.png"></a>
+      <div id="logo-container"><a href="index.html"><img id="navimg" src="images/logosmall.png"></a></div>
       <ul>
         <li><a href="info/info.html">Information</a></li>
         <li><a href="quiz/quiz.html">Quiz</a></li>
@@ -31,15 +32,15 @@
     <img id="bottle" src="images/waterbottle.png">
     <img id="cat" src="images/cat.png">
     <section id="mainimages">
-      <div class="garbage">
+      <div class="can">
         <img src="images/compost.png">
         <h3>GARBAGE</h3>
       </div>
-      <div class="recycle">
+      <div class="can" id="recycle">
         <img src="images/Recycling.png">
         <h3>RECYCLE</h3>
       </div>
-      <div class="compost">
+      <div class="can" id="compost">
         <img src="images/Garbage.png">
         <h3>COMPOST</h3>
       </div>

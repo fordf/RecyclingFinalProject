@@ -1,0 +1,97 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "typicons.font",
+        "scope": null,
+        "escapedName": "typicons.font",
+        "name": "typicons.font",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/forf/codefellows/201/RecyclingFinalProject"
+    ]
+  ],
+  "_from": "typicons.font@latest",
+  "_id": "typicons.font@2.0.8",
+  "_inCache": true,
+  "_location": "/typicons.font",
+  "_nodeVersion": "0.10.28",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/typicons.font-2.0.8.tgz_1471824210124_0.7980409059673548"
+  },
+  "_npmUser": {
+    "name": "s-ings",
+    "email": "stephen@s-ings.com"
+  },
+  "_npmVersion": "3.10.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "typicons.font",
+    "scope": null,
+    "escapedName": "typicons.font",
+    "name": "typicons.font",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/typicons.font/-/typicons.font-2.0.8.tgz",
+  "_shasum": "ddbc42da781af4ee74da3362a72842519bbd1b17",
+  "_shrinkwrap": null,
+  "_spec": "typicons.font",
+  "_where": "/Users/forf/codefellows/201/RecyclingFinalProject",
+  "author": {
+    "name": "Stephen Hutchings",
+    "url": "http://www.s-ings.com"
+  },
+  "bugs": {
+    "url": "https://github.com/stephenhutchings/typicons.font/issues"
+  },
+  "dependencies": {},
+  "description": "Typicons are free-to-use vector icons embedded in a webfont for easy use in your user interfaces, whether it be on the web or in a native application.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "ddbc42da781af4ee74da3362a72842519bbd1b17",
+    "tarball": "https://registry.npmjs.org/typicons.font/-/typicons.font-2.0.8.tgz"
+  },
+  "files": [
+    "src/font/typicons.css",
+    "src/font/typicons.svg",
+    "src/font/typicons.eot",
+    "src/font/typicons.ttf",
+    "src/font/typicons.woff"
+  ],
+  "gitHead": "d63bfc2822135769d894e5300422b77fb61f6bef",
+  "homepage": "http://typicons.com/",
+  "keywords": [
+    "icon",
+    "fonts",
+    "icons",
+    "font-face",
+    "webfont"
+  ],
+  "license": "(CC-BY-SA and SIL)",
+  "main": "src/font/typicons.css",
+  "maintainers": [
+    {
+      "name": "s-ings",
+      "email": "stephen@s-ings.com"
+    }
+  ],
+  "name": "typicons.font",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenhutchings/typicons.font.git"
+  },
+  "scripts": {},
+  "style": "src/font/typicons.css",
+  "version": "2.0.8"
+}

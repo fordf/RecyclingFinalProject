@@ -1,73 +1,62 @@
 #mainimages {
   position: fixed;
-  width: 1000px;
+  width: 100%;
   vertical-align: top;
   margin: 0 auto;
-  bottom: -38px;
-  left: 10%;
+  margin-left: 3vw;
+  /*top: 50%;*/
+  bottom: -2.5em;
   z-index: -3;
+}
+
+#mainimages .can {
+  width: 30%;
+  display: inline-block;
 }
 
 #mainimages img {
   display: inline-block;
-  vertical-align: top;
-  width: 330px;
-  position: relative;
+  /*vertical-align: bottom;*/
+  width: 100%;
+  z-index: -5;
 }
+
 #navimg img {
   width: 200px;
   height: 60px;
 }
 
-.garbage {
-  position: relative;
-  display: inline-block;
-  z-index: -1;
-}
-
-.recycle {
-  position: relative;
-  display: inline-block;
-  margin-left: 300px;
-  z-index: -1;
-  margin-left: 0px;
-}
-
-.compost {
-  position: relative;
-  display: inline-block;
-  margin-left: 0px;
-  z-index: -1;
-}
-
-.compost h3, .recycle h3, .garbage h3 {
+.can h3 {
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 3.7vw;
   color: #ffffff;
+  text-shadow: 0px 0px 7px black;
   position: absolute;
-  margin-left: 74px;
-  margin-top: -280px;
+  bottom: 50%;
+  margin: 0 1.8em;
+  z-index: 1;
 }
 
-.recycle h3 {
-  margin-left: 81px;
+.can#recycle h3 {
+  margin: 0 1.96em;
 }
 
-.garbage h3 {
- margin-left: 76px;
+.can#compost h3 {
+  margin: 0 1.76em;
 }
 
 form {
   margin: 10px auto;
   text-align: center;
+  min-width: 306px;
 }
 
 #main {
   margin: 10px auto;
   margin-top: 70px;
   text-align: center;
-  max-width: 50%;
+  /*max-width: 50%;*/
   font-family: 'Poiret One';
   font-size: 150%;
   font-weight: bold;
@@ -105,7 +94,7 @@ input {
   background-color: #ffc879;
   width: auto;
   height: auto;
-  margin-left: 30px;
+  margin-top: 4px;
   border-radius: 4px;
   border: 3px outset gray;
 }
@@ -125,7 +114,6 @@ input {
    font-weight: bold;
    width: auto;
    height: auto;
-   /*margin-left: 575px;*/
    margin: 0 auto;
    border-radius: 4px;
    border: 3px outset gray;

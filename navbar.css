@@ -6,19 +6,18 @@ nav {
   height: 60px;
   margin: 20px auto;
   padding: 0px;
-  width: 1000px;
-  min-width: 800px;
+  width: 100%;
 }
 
 nav ul, nav li {
   display: inline-block;
-  float:left;
+  float:right;
   padding:0px;
   margin:0px;
 }
 
 nav ul {
-  margin-left: 60px;
+  margin-left: 10px;
 }
 
 nav img {
@@ -27,19 +26,28 @@ nav img {
   width: 200px;
   height: 64px;
   margin-top: -10px;
-  }
+}
+
+#logo-container {
+
+}
 
 nav li {
-  width: 25%;
-  min-width: 239px;
-  padding-top: 14px;
-  padding-bottom: 11px;
+  width: 20vw;
+  min-height: 38px;
+  padding-top: 13px;
+  padding-bottom: 13px;
   color: #439E33;
   font-family: 'Poiret One', cursive;
-  font-size: 30px;
+  font-size: 3vw;
   font-weight: bold;
   text-align: center;
   border-left: 1px solid #cccccc;
+}
+
+nav li a {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 nav a {
@@ -49,6 +57,6 @@ nav a {
 }
 
 nav a:hover {
-  font-size: 33px;
+  font-size: 4vw;
   color: #1360DB;
 }
